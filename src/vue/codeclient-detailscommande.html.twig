@@ -1,0 +1,67 @@
+{% extends "base.html.twig" %}
+{% block style %}<link href="css/style-signin.css" rel="stylesheet"> {% endblock %}
+{% block title %} {{ parent() }}  {% endblock %}
+
+{% block contenu %}
+<div style="text-align:center">
+<h2> Vous avez choisi d'obtenir les détails d'une commande à partir d'un code client </h2>
+<br>
+<br>
+{# <br>
+<br>
+<h3> Entrez ici un code client : </h3>
+<br>
+<div style="padding-left:15%; padding-right:15%;">
+<input type="text" class="form-control" id="codeclient" name="numClient" placeholder="Code client">
+<button type="submit" name="btValider" class="btn btn-lg btn-primary btn-block">Rechercher</button>
+<form class="form-inline my-2 my-lg-0" action="index.php?page=codeclient-detailscommande" method="post">
+    <input class="form-control mr-sm-2" type="search" name="recherche" id="recherche" placeholder="Tapez votre recherche">
+    <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercher" id="btRechercher" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+</form> 
+</div>#}
+</div> <br>
+<div style="text-align:center">
+<h2> Voici le(s) resultat(s) de votre recherche :  </h2>
+</div>
+<br>
+<br><br><br>
+
+
+<div class="panel panel-default">   
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">id</th>
+      <th scope="col">Nombre d'articles</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Modèle du chariot</th>
+      <th scope="col">Manufacture</th>
+      <th scope="col">Code client</th>
+    </tr>
+  </thead>
+  <tbody>
+    {# <tr class="table-active">
+      <th scope="row">Active</th>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td>Column content</td>
+    </tr> #}
+    {% for d in listeRecherche %}
+    <tr {# class="table-primary" #} >
+      <td>{{d.id}}</td>
+      <td>{{d.nbrArt}}</td>
+      <td>{{d.designation}}</td>
+      <td>{{d.forkilft}}</td>
+      <td>{{d.manu}}</td>
+      <td>{{d.codeclient}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+{% block style %}<link href="css/style-signin.css" rel="stylesheet"> {% endblock %}
+{% block title %} {{ parent() }}  {% endblock %}
+
+{% block contenu %}
+<div style="text-align:center">
+<h2> Vous avez choisi d'entrer le modèle d'un chariot pour trouver les batteries installées ainsi que les plans de coffres et de cyclages </h2>
+<br>
+<br>
+</div> <br>
+<div style="text-align:center">
+<h2> Voici le(s) resultat(s) de votre recherche :  </h2>
+</div>
+<br>
+<br><br><br>
+
+
+<div class="panel panel-default">   
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">id</th>
+      <th scope="col">Nombre d'articles</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Modèle du chariot</th>
+      <th scope="col">Numero de la batterie</th>
+      <th scope="col">Nom de la batterie</th>
+      <th scope="col">Constructeur</th>
+      <th scope="col">Famille</th>
+      <th scope="col">Plan de cyclage</th>
+      <th scope="col">Plan de coffre 1 </th>
+      <th scope="col">Plan de coffre 2 </th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for d in listeRechercheChariot %}
+    <tr>
+      <td>{{d.id}}</td>
+      <td>{{d.nbrArt}}</td>
+      <td>{{d.designation}}</td>
+      <td>{{d.forkilft}}</td>
+      <td>{{d.idTa}}</td>
+      <td>{{d.app}}</td>
+      <td>{{d.constr}}</td>
+      <td>{{d.fam}}</td>
+      <td>{{d.plancycl}}</td>
+      <td><u>Longueur</u> = {{d.l1}} <br><u>Largeur</u> = {{d.lar1}} <br><u>Hauteur</u> = {{d.h1}}</td>
+      <td><u>Longueur</u> = {{d.l2}} <br><u>Largeur</u> = {{d.lar2}} <br><u>Hauteur</u> = {{d.h2}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+{% endblock %}

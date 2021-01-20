@@ -1,0 +1,135 @@
+{% extends "base.html.twig" %}
+{% block title %} {{ parent() }} Accueil {% endblock %}
+
+{% block contenu %} 
+
+<h1>Bienvenue sur le site de l'AS400</h1>
+<br>
+<div style="text-align:center">
+<h2> Que voulez-vous faire ? </h2>
+</div>
+<a href="" class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.9'" onmouseout="this.style.opacity ='1'">
+<div style="padding-left:5%; padding-right:5%; padding-top:3%">
+ <div class="card text-white bg-primary mb-3" style="max-width: 100rem;">
+  {# <div class="card-header">Visuel d'une commande</div> #}
+  <div class="card-body">
+  <br>
+    <h4 class="card-title">- Obtenir le visuel en detail sur une commande {# <a href="" ><FONT color="white" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+  <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+</svg> </FONT></a> #}  </h4> {# 
+    <p class="card-text"> </p> #}
+  </div>
+</div>
+</a>
+
+<!--style pour que les liens ne soient pas soulignés -->
+<style type="text/css">
+    .open-button
+    {
+    text-decoration:none;
+    }
+    a:link
+    {
+    text-decoration:none;
+    }
+</style>
+
+<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card text-white bg-secondary mb-3" style="max-width: 100rem;">
+  <div class="card-body">
+    <h4 class="card-title">- Entrer un code client pour obtenir le detail d'une commande </h4>
+    <form class="form-inline my-2 my-lg-0" action="index.php?page=codeclient-detailscommande" method="post">
+    <input class="form-control mr-sm-2" type="search" name="recherche" id="recherche" placeholder="Code client">
+    <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercher" id="btRechercher" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+</form>
+  </div>
+</div>
+</a>
+<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card text-white bg-success mb-3" style="max-width: 100rem;">
+  <div class="card-body">
+    <h4 class="card-title">- Entrer le code de l'article pour trouver les commandes qui correspondent à cet article</h4>
+    <form class="form-inline my-2 my-lg-0" action="index.php?page=article-commandes" method="post">
+      <input class="form-control mr-sm-2" type="search" name="rechercheArticle" id="rechercheArticle" placeholder="Code de l'article">
+      <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherArticle" id="btRechercherArticle" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+    </form>
+  </div>
+</div>
+</a>
+<a  class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card text-white bg-danger mb-3" style="max-width: 100rem;">
+  <div class="card-body">
+    <h4 class="card-title">- Obtenir les informations sur les batteries à partir de l'année 2000</h4>
+  </div>
+</div>
+</a>
+<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card text-white bg-warning mb-3" style="max-width: 100rem;">
+  <div class="card-body">
+    <h4 class="card-title">- Entrer le numéro de garantie pour obtenir le visuel des commandes et factures </h4>
+    <form class="form-inline my-2 my-lg-0" action="index.php?page=codeclient-detailscommande" method="post">
+    <input class="form-control mr-sm-2" type="search" name="rechercheGarantie" id="rechercheGarantie" placeholder="Numero de garantie">
+    <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherGarantie" id="btRechercherGarantie" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+</form>
+  </div>
+</div>
+</a>
+<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card text-white bg-info mb-3" style="max-width: 100rem;">
+  <div class="card-body">
+    <h4 class="card-title">- Entrer le modèle d'un chariot pour trouver les batteries qui y sont installées avec plans de coffres et de cyclages</h4>
+    <form class="form-inline my-2 my-lg-0" action="index.php?page=chariot-batteriesplans" method="post">
+    <input class="form-control mr-sm-2" type="search" name="rechercheChariot" id="rechercheChariot" placeholder="Modèle du chariot">
+    <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherChariot" id="btRechercherChariot" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+</form>
+  </div>
+</div>
+</a>
+<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card bg-light mb-3" style="max-width: 100rem;">
+  <div class="card-body">
+    <h4 class="card-title">- Entrer le numéro de garantie d'une batterie pour accéder aux plans de coffres et de cyclages</h4>
+    <form class="form-inline my-2 my-lg-0" action="index.php?page=codeclient-detailscommande" method="post">
+    <input class="form-control mr-sm-2" type="search" name="rechercheGarant" id="rechercheGarant" placeholder="Numéro de garantie">
+    <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherGarant" id="btRechercherGarant" type="submit"> <FONT color="black"> Rechercher </FONT></button>
+</form>
+  </div>
+</div>
+</a>
+<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
+  <div class="card-body">
+    <h4 class="card-title">- Entrer un numéro de série pour obtenir le plan de cyclage et de coffre</h4>
+    <form class="form-inline my-2 my-lg-0" action="index.php?page=serie-plan" method="post">
+    <input class="form-control mr-sm-2" type="search" name="rechercheSerie" id="rechercheSerie" placeholder="Numéro de série">
+    <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:white;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherSerie" id="btRechercherSerie" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+</form>
+  </div>
+</div>
+</a>
+{# <a href="" class="open-button" style="cursor: pointer; hover;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card text-white bg-primary mb-3" style="max-width: 100rem;">
+  {# <div class="card-header">Visuel d'une commande</div> #}
+{#   <div class="card-body">
+  <br>
+    <h4 class="card-title">- Entrer le modele d'un chariot pour trouver les batteries qui y sont installé avec les plans de coffre et de cyclage {# <a href="" ><FONT color="white" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+  <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+{# {# </svg> </FONT></a> #}  {# </h4> #} {# 
+    <p class="card-text"> </p> #}
+{#   </div>
+</div>
+</a> #}
+<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card text-white bg-primary mb-3" style="max-width: 100rem;">
+  <div class="card-body">
+    <h4 class="card-title">- Entrer un numéro de série pour obtenir les dimensions et les informations sur les batteries</h4>
+    <form class="form-inline my-2 my-lg-0" action="index.php?page=serie-dimensionsinfos" method="post">
+      <input class="form-control mr-sm-2" type="search" name="rechercheSer" id="rechercheSer" placeholder="Numéro de série">
+      <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherSer" id="btRechercherSer" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+    </form>
+  </div>
+</div>
+</div>
+</a>
+
+{% endblock %}

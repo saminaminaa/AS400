@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+{% block style %}<link href="css/style-signin.css" rel="stylesheet"> {% endblock %}
+{% block title %} {{ parent() }}  {% endblock %}
+
+{% block contenu %}
+<div style="text-align:center">
+<h2> Vous avez choisi d'entrer un numéro de série pour obtenir les dimensions et les informations sur les batteries</h2>
+<br>
+<br>
+</div> <br>
+<div style="text-align:center">
+<h2> Voici le(s) resultat(s) de votre recherche :  </h2>
+</div>
+<br>
+<br><br><br>
+
+
+<div class="panel panel-default">   
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+        <th scope="col">Numéro de série</th>
+        <th scope="col">Numéro de l'appareil</th>
+        <th scope="col">Nom de l'appareil</th>
+        <th scope="col">Constructeur de l'appareil</th>
+        <th scope="col">Famille de l'appareil</th>
+        <th scope="col">Longueur 1</th>
+        <th scope="col">Largeur 1</th>
+        <th scope="col">Hauteur 1</th>
+        <th scope="col">Longeur 2</th>
+        <th scope="col">Largeur 2</th>
+        <th scope="col">Hauteur 2</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for s in listeRechercheSer %}
+    <tr>
+      <td>{{s.id}}</td>
+      <td>{{s.idApp}}</td>
+      <td>{{s.app}}</td>
+      <td>{{s.constr}}</td>
+      <td>{{s.fam}}</td>
+      <td>{{s.l1}}</td>
+      <td>{{s.lar1}}</td>
+      <td>{{s.h1}}</td>
+      <td>{{s.l2}}</td>
+      <td>{{s.lar2}}</td>
+      <td>{{s.h2}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+{% endblock %}

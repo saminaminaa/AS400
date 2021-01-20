@@ -1,0 +1,78 @@
+{% extends "base.html.twig" %}
+{% block style %}<link href="css/style-signin.css" rel="stylesheet"> {% endblock %}
+{% block title %} {{ parent() }} Detail de la commande {% endblock %}
+
+{% block contenu %}
+<div style="text-align:center">
+<h1> Detail de la commande </h1>
+
+</div>
+<br><br>
+
+{# <div class="card text-white bg-secondary mb-3" style="max-width: 100rem;">
+  <div class="card-body">
+    <h4 class="card-title">Commande numero : {{unDetailcommande.id}}</h4>
+    <h4 class="card-title">Nombre d'article : {{unDetailcommande.nbrArt}}</h4>
+    <h4 class="card-title">Designation : {{unDetailcommande.designation}}</h4>
+    <h4 class="card-title">Modèle de chariot : {{unDetailcommande.forkilft}}</h4>
+    <h4 class="card-title">Manufacture : {{unDetailcommande.manu}}</h4>
+    <h4 class="card-title">Numéro de facture : {{unDetailcommande.idFacture}}</h4>
+    <h4 class="card-title">Numéro de livraion : {{unDetailcommande.idLivraison}}</h4>
+    <h4 class="card-title">Numéro de commande : {{unDetailcommande.idCommande}}</h4>
+    <h4 class="card-title">Plan de cyclage : {{unDetailcommande.planCyclage}}</h4>
+    <h4 class="card-title">Plan de chantier : {{unDetailcommande.planChantier}}</h4>
+  </div>
+</div> #}
+<div class="panel panel-default">
+<div class="table-responsive">
+<div style="padding-left:33%; padding-right:33%">
+<table class="table table-hover">
+  <tbody>
+    <tr class="table-dark">
+      <th scope="row">Numéro de commande : </th>
+      <td>{{unDetailcommande.id}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Nombre d'article : </th>
+      <td>{{unDetailcommande.nbrArt}}</td>
+    </tr>
+    <tr class="table-primary">
+      <th scope="row">Designation : </th>
+      <td>{{unDetailcommande.designation}}</td>
+    </tr>
+    <tr class="table-secondary">
+      <th scope="row">Modèle de chariot :</th>
+      <td>{{unDetailcommande.forkilft}}</td>
+    </tr>
+    <tr class="table-success">
+      <th scope="row">Manufacture : </th>
+      <td>{{unDetailcommande.manu}}</td>
+    </tr>
+    <tr class="table-danger">
+      <th scope="row">Numéro de facture : </th>
+      <td>{{unDetailcommande.idFacture}}</td>
+    </tr>
+    <tr class="table-warning">
+      <th scope="row">Numéro de livraion : </th>
+      <td>{{unDetailcommande.idLivraison}}</td>
+    </tr>
+    <tr class="table-info">
+      <th scope="row">Numéro de commande : </th>
+      <td>{{unDetailcommande.idCommande}}</td>
+    </tr>
+    <tr class="table-light">
+      <th scope="row">Plan de cyclage : </th>
+      <td>{{unDetailcommande.planCyclage}}</td>
+    </tr>
+    <tr class="table-dark">
+      <th scope="row">Plan de chantier : </th>
+      <td>{{unDetailcommande.planChantier}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
