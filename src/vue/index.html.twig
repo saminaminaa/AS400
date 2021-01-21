@@ -38,9 +38,9 @@
 <a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
 <div class="card text-white bg-primary mb-3" style="max-width: 100rem;">
   <div class="card-body">
-    <h4 class="card-title">- Entrer un code client pour obtenir la liste des commandes passées puis le detail de ces commandes </h4>
+    <h4 class="card-title">- Entrer le nom d'un client pour obtenir la liste des commandes passées puis le detail de ces commandes </h4>
     <form class="form-inline my-2 my-lg-0" action="index.php?page=codeclient-detailscommande" method="post">
-    <input class="form-control mr-sm-2" type="search" name="recherche" id="recherche" placeholder="Code client">
+    <input class="form-control mr-sm-2" type="search" name="recherche" id="recherche" placeholder="Nom d'un client">
     <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercher" id="btRechercher" type="submit"> <FONT color="white"> Rechercher </FONT></button>
 </form>
   </div>
@@ -72,7 +72,7 @@
   <div class="card-body">
     <h4 class="card-title">- Entrer le numéro de série{#garantie#} pour obtenir le visuel des commandes et factures </h4>
     <form class="form-inline my-2 my-lg-0" action="index.php?page=garantie-commandesfactures" method="post">
-    <input class="form-control mr-sm-2" type="search" name="rechercheGarantie" id="rechercheGarantie" placeholder="Numero de garantie">
+    <input class="form-control mr-sm-2" type="search" name="rechercheGarantie" id="rechercheGarantie" placeholder="Numero de série">
     <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherGarantie" id="btRechercherGarantie" type="submit"> <FONT color="white"> Rechercher </FONT></button>
 </form>
   </div>
@@ -89,19 +89,19 @@
   </div>
 </div>
 </a>
-<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+{# <a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
 <div class="card text-white bg-info mb-3" style="max-width: 100rem;">
   <div class="card-body">
-    <h4 class="card-title">- Entrer le numéro de garantie d'une batterie pour accéder aux plans de coffres et de cyclages</h4>
+    <h4 class="card-title">- Entrer le numéro de série d'une batterie pour accéder aux plans de coffres et de cyclages</h4>
     <form class="form-inline my-2 my-lg-0" action="index.php?page=garantie-plans" method="post">
-    <input class="form-control mr-sm-2" type="search" name="rechercheGarant" id="rechercheGarant" placeholder="Numéro de garantie">
+    <input class="form-control mr-sm-2" type="search" name="rechercheGarant" id="rechercheGarant" placeholder="Numéro de Série">
     <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherGarant" id="btRechercherGarant" type="submit"> <FONT color="white"> Rechercher </FONT></button>
 </form>
   </div>
 </div>
-</a>
+</a> #}
 <a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
-<div class="card bg-light mb-3" style="max-width: 100rem;">
+<div class="card text-white bg-info mb-3" style="max-width: 100rem;">
   <div class="card-body">
     <h4 class="card-title">- Entrer un numéro de série pour obtenir le plan de cyclage et de coffre</h4>
     <form class="form-inline my-2 my-lg-0" action="index.php?page=serie-plan" method="post">
@@ -123,18 +123,18 @@
 {#   </div>
 </div>
 </a> #}
-<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
-<div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
+<span class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card bg-light mb-3" style="max-width: 100rem;">
   <div class="card-body">
     <h4 class="card-title">- Entrer un numéro de série pour obtenir les dimensions et les informations sur les batteries</h4>
     <form class="form-inline my-2 my-lg-0" action="index.php?page=serie-dimensionsinfos" method="post">
       <input class="form-control mr-sm-2" type="search" name="rechercheSer" id="rechercheSer" placeholder="Numéro de série">
-      <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:white;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherSer" id="btRechercherSer" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+      <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherSer" id="btRechercherSer" type="submit"> <FONT color="black"> Rechercher </FONT></button>
     </form>
   </div>
 </div>
 </div>
-</a>
+</span>
 </div>
 
 {% endblock %}

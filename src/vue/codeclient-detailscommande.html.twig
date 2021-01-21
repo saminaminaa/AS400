@@ -4,7 +4,7 @@
 
 {% block contenu %}
 <div style="text-align:center">
-<h2> Vous avez choisi d'obtenir les détails d'une commande à partir d'un code client </h2>
+<h2> Vous avez choisi d'obtenir la liste des commandes puis les détails d'une commande à partir du nom d'un client </h2>
 <br>
 <br>
 {# <br>
@@ -32,6 +32,7 @@
 <table class="table table-hover">
   <thead>
     <tr class="table-primary">
+      <th scope="col">Nom du client</th>
       <th scope="col">Code client</th>
       <th scope="col">Numéro de la commande</th>
       <th scope="col">Date de la commande</th>
@@ -48,6 +49,7 @@
     </tr> #}
     {% for d in listeRecherche %}
     <tr {# class="table-primary" #} >
+      <td>{{d.nom}}</td>
       <td>{{d.codeclient}}</td>
       <td>{{d.numCommande}}</td>
       <td>{{d.date}}</td>

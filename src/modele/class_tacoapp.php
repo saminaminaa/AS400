@@ -20,7 +20,7 @@ class TacoApp{
         $this->rechercheArticle = $db->prepare("select ta.id AS tacid, ta.appareil, tm.id, d.planCyclage, d.id, c.id AS idCom, c.date, c.numClient, c.idFacture from tacoapp ta, tacomaster tm, detailcommande d, commande c where ta.id = tm.idApp and tm.id = d.planCyclage and d.idCommande = c.id and ta.id like :rechercheArticle order by ta.id");
     
         //requete pour selectionner les informations sur les batteries à partir de l'année 2000.
-        $this->select2000 = $db->prepare("select ta.id AS idTa, ta.constructeur, ta.famille, ta.appareil, tm.id, d.id, c.id, c.date from tacoapp ta, tacomaster tm, detailcommande d, commande c where ta.id=tm.idApp and tm.planCyclage=d.planCyclage and d.idCommande=c.id and c.date >= '2000-00-00' order by c.date");
+        $this->select2000 = $db->prepare("select ta.id AS idTa, ta.constructeur, ta.famille, ta.appareil, tm.id, d.id, c.id, c.date, f.id, f.date AS dateFacture from tacoapp ta, tacomaster tm, detailcommande d, commande c, facture f where ta.id=tm.idApp and tm.planCyclage=d.planCyclage and d.idCommande=c.id and f.idCommande = c.id and f.date >= '2000-00-00' order by c.date");
 
         //requete permettant de trouver les plans de cyclages et de coffres correspondant à un numero de garantie
         $this->rechercheGarant = $db->prepare("select ta.id AS tacid, ta.appareil, tm.id, tm.planCyclage, tm.planCoffre, tc.plancoffre, tc.longueur1, tc.largeur1, tc.hauteur1, tc.longueur2, tc.largeur2, tc.hauteur2 from tacoapp ta, tacomaster tm, tacocof tc where ta.id = tm.idApp and tm.planCoffre = tc.plancoffre and ta.id like :rechercheGarant order by ta.id");
