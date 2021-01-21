@@ -1,6 +1,6 @@
 <?php
-//------------------------------------------Page pour voir les commandes qui correspondent à un article-------------------------------------------------------------------------------------------
-    //fonction pour la page permettant de voir les commandes qui correspondent à un article
+//------------------------------------------Page pour voir les plans qui correspondent à un numéro de garantie-------------------------------------------------------------------------------------------
+    //fonction pour la page permettant de voir les plans qui correspondent à un numéro de garantie
     function actionGarantiePlans($twig,$db){
         if(isset($_POST['btRechercherGarant'])){
             $form = array();
