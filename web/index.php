@@ -10,6 +10,7 @@
     require_once '../src/controleur/controleur_article_commandes.php';
     require_once '../src/controleur/controleur_detailscommande.php';
     require_once '../src/controleur/controleur_infosbatteries2000.php';
+    require_once '../src/controleur/controleur_garantie_plans.php';
     require_once '../src/app/connexion.php';
     require_once '../src/modele/_class.php';
 

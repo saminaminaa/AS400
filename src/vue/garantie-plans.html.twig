@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+{% block style %}<link href="css/style-signin.css" rel="stylesheet"> {% endblock %}
+{% block title %} {{ parent() }}  {% endblock %}
+
+{% block contenu %}
+<div style="text-align:center">
+<h2> Vous avez choisi d'entrer un numéro de garantie pour accéder aux plans de coffres et de cyclage</h2>
+<br>
+<br>
+</div> <br>
+<div style="text-align:center">
+  <h2> Voici le(s) resultat(s) de votre recherche :  </h2>
+</div>
+<br>
+<br><br><br>
+
+
+<div class="panel panel-default">   
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Numéro de garantie</th>
+      <th scope="col">Nom de la batterie</th>
+      <th scope="col">Plan de cyclage </th>
+      <th scope="col">Plan de coffre 1</th>
+      <th scope="col">Plan de coffre 2</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for ta in listeRechercheGarant %}
+      <tr>
+        <td>{{ta.id}}</td>
+        <td>{{ta.appareil}}</td>
+        <td>{{ta.planCyclage}}</td>
+        <td><u>Longueur</u> = {{ta.longueur1}}<br><u>Largeur</u> = {{ta.largeur1}}<br><u>Hauteur</u> = {{ta.hauteur1}}</td>
+        <td><u>Longueur</u> = {{ta.longueur2}}<br><u>Largeur</u> = {{ta.largeur2}}<br><u>Hauteur</u> = {{ta.hauteur2}}</td>
+       </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+
+<a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+    
+
+
+
+{% endblock %}
