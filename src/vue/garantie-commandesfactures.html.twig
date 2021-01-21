@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+{% block style %}<link href="css/style-signin.css" rel="stylesheet"> {% endblock %}
+{% block title %} {{ parent() }}  {% endblock %}
+
+{% block contenu %}
+<div style="text-align:center">
+<h2> Vous avez choisi d'entrer un numéro de série pour obtenir le visuel des commandes et factures</h2>
+<br>
+<br>
+</div> <br>
+<div style="text-align:center">
+  <h2> Voici le(s) resultat(s) de votre recherche :  </h2>
+</div>
+<br>
+<br><br><br>
+
+
+<div class="panel panel-default">   
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Numéro de série</th>
+      <th scope="col">Numéro de la commande</th>
+      <th scope="col">Date de la commande</th>
+      <th scope="col">Numéro du client</th>
+      <th scope="col">Date de la facture</th>
+      <th scope="col">Nom du client</th>
+      <th scope="col">Adresse 1</th>
+      <th scope="col">Adresse 2</th>
+      <th scope="col">Adresse 3</th>
+      <th scope="col">Code postale</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for ta in listeRechercheGarantie %}
+      <tr>
+        <td>{{ta.numSerie}}</td>
+        <td>{{ta.numCommande}}</td>
+        <td>{{ta.dateCommande}}</td>
+        <td>{{ta.numClient}}</td>
+        <td>{{ta.dateFacture}}</td>
+        <td>{{ta.nomClient}}</td>
+        <td>{{ta.adresse1}}</td>
+        <td>{{ta.adresse2}}</td>
+        <td>{{ta.adresse3}}</td>
+        <td>{{ta.zip}}</td>
+        {# <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&id={{ ta.id }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
+       #}</tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+
+<a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+    
+
+{% endblock %}

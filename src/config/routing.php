@@ -9,6 +9,7 @@
         $lesPages['detailscommande'] = "actionDetailCommande";
         $lesPages['infosbatteries2000'] = "actionInfosBatteries2000";
         $lesPages['garantie-plans'] = "actionGarantiePlans";
+        $lesPages['garantie-commandesfactures'] = "actionGarantieCommandesFactures";
 
       /*   if ($db == NULL) {
             return "nous ne trouvons pas de bd";
