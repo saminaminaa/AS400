@@ -32,12 +32,11 @@
 <table class="table table-hover">
   <thead>
     <tr class="table-primary">
-      <th scope="col">id</th>
-      <th scope="col">Nombre d'articles</th>
-      <th scope="col">Designation</th>
-      <th scope="col">Modèle du chariot</th>
-      <th scope="col">Manufacture</th>
       <th scope="col">Code client</th>
+      <th scope="col">Numéro de la commande</th>
+      <th scope="col">Date de la commande</th>
+      <th scope="col">Numéro de la facture</th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
@@ -49,12 +48,12 @@
     </tr> #}
     {% for d in listeRecherche %}
     <tr {# class="table-primary" #} >
-      <td>{{d.id}}</td>
-      <td>{{d.nbrArt}}</td>
-      <td>{{d.designation}}</td>
-      <td>{{d.forkilft}}</td>
-      <td>{{d.manu}}</td>
       <td>{{d.codeclient}}</td>
+      <td>{{d.numCommande}}</td>
+      <td>{{d.date}}</td>
+      <td>{{d.idFacture}}</td>
+      <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&id={{ d.id }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
+      
     </tr>
     {% endfor %}
   </tbody>
