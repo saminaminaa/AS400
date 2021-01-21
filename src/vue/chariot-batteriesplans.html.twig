@@ -7,7 +7,18 @@
 <h2> Vous avez choisi d'entrer le modèle d'un chariot pour trouver les batteries installées ainsi que les plans de coffres et de cyclages </h2>
 <br>
 <br>
+
+
+<h1 class="h3 mb-3 font-weight-normal">Vous avez recherché : "{{form.rechercheChariot}}"</h1>
+
+
 </div> <br>
+{% if listeRechercheChariot == null %}
+<div style="text-align:center">
+  <h2> Aucun résultat n'a été trouvé pour cette recherche  </h2> <br> <br>
+  <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+  </div>
+{% else %}
 <div style="text-align:center">
 <h2> Voici le(s) resultat(s) de votre recherche :  </h2>
 </div>
@@ -20,7 +31,7 @@
 <table class="table table-hover">
   <thead>
     <tr class="table-primary">
-      <th scope="col">id</th>
+      {# <th scope="col">id</th> #}
       <th scope="col">Nombre d'articles</th>
       <th scope="col">Designation</th>
       <th scope="col">Modèle du chariot</th>
@@ -36,8 +47,11 @@
   <tbody>
 
     {% for d in listeRechercheChariot %}
+    {# {% if d.recherchechariot != d.forkilft %}
+      <h1>Aucun résultat pour cette recherche</h1>
+    {% else %} #}
     <tr>
-      <td>{{d.id}}</td>
+      {# <td>{{d.id}}</td> #}
       <td>{{d.nbrArt}}</td>
       <td>{{d.designation}}</td>
       <td>{{d.forkilft}}</td>
@@ -49,13 +63,17 @@
       <td><u>Longueur</u> = {{d.l1}} <br><u>Largeur</u> = {{d.lar1}} <br><u>Hauteur</u> = {{d.h1}}</td>
       <td><u>Longueur</u> = {{d.l2}} <br><u>Largeur</u> = {{d.lar2}} <br><u>Hauteur</u> = {{d.h2}}</td>
     </tr>
+    {# {% endif %} #}
     {% endfor %}
   </tbody>
 </table>
 </div>
 </div>
 <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+{% endif %}
 
 
+
+{# {% endif %} #}
 
 {% endblock %}

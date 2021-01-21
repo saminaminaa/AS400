@@ -7,6 +7,14 @@
 <h2> Vous avez choisi d'obtenir la liste des commandes puis les détails d'une commande à partir du nom d'un client </h2>
 <br>
 <br>
+<h1 class="h3 mb-3 font-weight-normal">Vous avez recherché : "{{form.recherche}}"</h1>
+<br><br>
+{% if listeRecherche == null %}
+<div style="text-align:center">
+  <h2> Aucun résultat n'a été trouvé pour cette recherche  </h2> <br> <br>
+  <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+  </div>
+{% else %}
 {# <br>
 <br>
 <h3> Entrez ici un code client : </h3>
@@ -64,7 +72,7 @@
 </div>
 
 <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
-
+{% endif %}
 
 
 {% endblock %}

@@ -8,7 +8,13 @@
 
             $rechercheChariot = $_POST['rechercheChariot'];
             $form['rechercheChariot'] = $rechercheChariot;
-        
+            /* function escape($valeur)
+            {
+                // Convertit les caractères spéciaux en entités HTML
+                return htmlspecialchars($valeur, ENT_QUOTES, 'UTF-8', false);
+            }
+            echo 'Vous avez recherché : ' .escape($rechercheChariot) .' !'; */
+
             $listeRechercheChariot = $detailcommande->rechercheChariot($rechercheChariot); //Liste des types de produits
                     
                 }

@@ -7,6 +7,16 @@
 <h2> Vous avez choisi d'entrer un numéro de série pour obtenir les dimensions et les informations sur les batteries</h2>
 <br>
 <br>
+
+<h1 class="h3 mb-3 font-weight-normal">Vous avez recherché : "{{form.rechercheSer}}"</h1>
+<br><br>
+{% if listeRechercheSer == null %}
+<div style="text-align:center">
+  <h2> Aucun résultat n'a été trouvé pour cette recherche  </h2> <br> <br>
+  <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+  </div>
+{% else %}
+
 </div> <br>
 <div style="text-align:center">
 <h2> Voici le(s) resultat(s) de votre recherche :  </h2>
@@ -56,6 +66,6 @@
 </div>
 
 <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
-
+{% endif %}
 
 {% endblock %}
