@@ -20,6 +20,7 @@
 <table class="table table-hover">
   <thead>
     <tr class="table-primary">
+        <th scope="col">Date</th>
         <th scope="col">Numéro de l'appareil</th>
         <th scope="col">Nom de l'appareil</th>
         <th scope="col">Constructeur de l'appareil</th>
@@ -28,19 +29,13 @@
   </thead>
   <tbody>
 
-    {% for s in liste2000 %}
+    {% for ta in liste2000 %}
     <tr>
-      <td>{{s.id}}</td>
-      <td>{{s.idApp}}</td>
-      <td>{{s.app}}</td>
-      <td>{{s.constr}}</td>
-      <td>{{s.fam}}</td>
-      <td>{{s.l1}}</td>
-      <td>{{s.lar1}}</td>
-      <td>{{s.h1}}</td>
-      <td>{{s.l2}}</td>
-      <td>{{s.lar2}}</td>
-      <td>{{s.h2}}</td>
+        <td>{{ta.date}}</td>
+        <td>{{ta.idTa}}</td>
+        <td>{{ta.appareil}}</td>
+        <td>{{ta.constructeur}}</td>
+        <td>{{ta.famille}}</td>
     </tr>
     {% endfor %}
   </tbody>

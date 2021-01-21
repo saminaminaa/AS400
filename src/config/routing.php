@@ -7,6 +7,7 @@
         $lesPages['serie-dimensionsinfos'] = "actionSerieDimensionsInfos";
         $lesPages['article-commandes'] = "actionArticleCommandes";
         $lesPages['detailscommande'] = "actionDetailCommande";
+        $lesPages['infosbatteries2000'] = "actionInfosBatteries2000";
 
       /*   if ($db == NULL) {
             return "nous ne trouvons pas de bd";
