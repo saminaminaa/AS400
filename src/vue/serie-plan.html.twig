@@ -32,15 +32,15 @@
     <tr class="table-primary">
       <th scope="col">Numéro de série</th>
       <th scope="col">Plan de cyclage</th>
-      <th scope="col">Plan de coffre 1 </th>
-      <th scope="col">Plan de coffre 2 </th>
+      <th scope="col">Plan de coffre 1</th>
+      <th scope="col">Plan de coffre 2</th>
     </tr>
   </thead>
   <tbody>
 
     {% for s in listeRechercheSerie %}
     <tr>
-      <td>{{s.id}}</td>
+      <td>{{s.idSerie}}</td>
       <td>{{s.pCycl}}</td>
       <td><u>Longueur</u> = {{s.l1}} <br><u>Largeur</u> = {{s.lar1}} <br><u>Hauteur</u> = {{s.h1}}</td>
       <td><u>Longueur</u> = {{s.l2}} <br><u>Largeur</u> = {{s.lar2}} <br><u>Hauteur</u> = {{s.h2}}</td>

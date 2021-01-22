@@ -33,6 +33,7 @@
       <th scope="col">Numéro de la commande</th>
       <th scope="col">Date de la commande</th>
       <th scope="col">Numéro du client</th>
+      <th scope="col">Numéro de la facture</th>
       <th scope="col">Date de la facture</th>
       <th scope="col">Nom du client</th>
       <th scope="col">Adresse 1</th>
@@ -43,18 +44,19 @@
   </thead>
   <tbody>
 
-    {% for ta in listeRechercheGarantie %}
+    {% for s in listeRechercheGarantie %}
       <tr>
-        <td>{{ta.numSerie}}</td>
-        <td>{{ta.numCommande}}</td>
-        <td>{{ta.dateCommande}}</td>
-        <td>{{ta.numClient}}</td>
-        <td>{{ta.dateFacture}}</td>
-        <td>{{ta.nomClient}}</td>
-        <td>{{ta.adresse1}}</td>
-        <td>{{ta.adresse2}}</td>
-        <td>{{ta.adresse3}}</td>
-        <td>{{ta.zip}}</td>
+        <td>{{s.numSerie}}</td>
+        <td>{{s.numCommande}}</td>
+        <td>{{s.dateCommande}}</td>
+        <td>{{s.numClient}}</td>
+        <td>{{s.numFacture}}</td>
+        <td>{{s.dateFacture}}</td>
+        <td>{{s.nomClient}}</td>
+        <td>{{s.adresse1}}</td>
+        <td>{{s.adresse2}}</td>
+        <td>{{s.adresse3}}</td>
+        <td>{{s.zip}}</td>
         </tr>
     {% endfor %}
   </tbody>

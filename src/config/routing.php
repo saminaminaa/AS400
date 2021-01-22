@@ -11,9 +11,9 @@
         $lesPages['garantie-plans'] = "actionGarantiePlans";
         $lesPages['garantie-commandesfactures'] = "actionGarantieCommandesFactures";
 
-      /*   if ($db == NULL) {
-            return "nous ne trouvons pas de bd";
-        } else { */
+      if ($db == NULL) {
+            echo( "nous ne trouvons pas de bd");
+        } 
 
 /*         if ($db != NULL) {
             if (isset($_GET['page'])) {

@@ -4,12 +4,12 @@
     function actionGarantieCommandesFactures($twig,$db){
         if(isset($_POST['btRechercherGarantie'])){
             $form = array();
-            $tacoapp = new Tacoapp($db);
+            $seriecommandes = new Seriecommandes($db);
 
             $rechercheGarantie = $_POST['rechercheGarantie'];
             $form['rechercheGarantie'] = $rechercheGarantie;
         
-            $listeRechercheGarantie = $tacoapp->rechercheGarantie($rechercheGarantie);
+            $listeRechercheGarantie = $seriecommandes->rechercheGarantie($rechercheGarantie);
                     
                 }
 
