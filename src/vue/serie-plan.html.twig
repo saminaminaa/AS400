@@ -38,12 +38,12 @@
   </thead>
   <tbody>
 
-    {% for s in listeRechercheSerie %}
+    {% for os in listeRechercheSerie %}
     <tr>
-      <td>{{s.idSerie}}</td>
-      <td>{{s.pCycl}}</td>
-      <td><u>Longueur</u> = {{s.l1}} <br><u>Largeur</u> = {{s.lar1}} <br><u>Hauteur</u> = {{s.h1}}</td>
-      <td><u>Longueur</u> = {{s.l2}} <br><u>Largeur</u> = {{s.lar2}} <br><u>Hauteur</u> = {{s.h2}}</td>
+      <td>{{os.NumSerie}}</td>
+      <td>{{os.pCycl}}</td>
+      <td><u>Longueur</u> = {{os.l1}} <br><u>Largeur</u> = {{os.lar1}} <br><u>Hauteur</u> = {{os.h1}}</td>
+      <td><u>Longueur</u> = {{os.l2}} <br><u>Largeur</u> = {{os.lar2}} <br><u>Hauteur</u> = {{os.h2}}</td>
     </tr>
     {% endfor %}
   </tbody>

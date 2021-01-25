@@ -1,12 +1,12 @@
 <?php
 function actionDetailCommande($twig, $db){
     $form = array();
-    $detailcommande = new Detailcommande($db);
+    $detailcommande = new OrderDetail($db);
     $liste = $detailcommande->select();
     $form['detailcommandes']=$liste;
 
     if(isset($_GET['id'])){
-        $detailcommande = new Detailcommande($db);
+        $detailcommande = new OrderDetail($db);
         $unDetailcommande = $detailcommande->selectById($_GET['id']);
         if ($unDetailcommande!=null){
             $form['detailcommande'] = $unDetailcommande;

@@ -4,12 +4,12 @@
     function actionSeriePlan($twig,$db){
         if(isset($_POST['btRechercherSerie'])){
             $form = array();
-            $seriecommandes = new Seriecommandes($db);
+            $orderserial = new OrderSerial($db);
 
             $rechercheSerie = $_POST['rechercheSerie'];
             $form['rechercheSerie'] = $rechercheSerie;
         
-            $listeRechercheSerie = $seriecommandes->rechercheSerie($rechercheSerie);
+            $listeRechercheSerie = $orderserial->rechercheSerie($rechercheSerie);
                     
                 }
 

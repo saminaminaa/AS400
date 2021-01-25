@@ -2,6 +2,7 @@
 
     require_once '../src/lib/vendor/autoload.php';
     require_once '../src/config/routing.php';
+    //require_once '../src/config/parametres.php';
     require_once '../src/controleur/controleur_index.php';
     require_once '../src/controleur/controleur_codeclient_detailscommande.php';
     require_once '../src/controleur/controleur_chariot_batteriesplans.php';

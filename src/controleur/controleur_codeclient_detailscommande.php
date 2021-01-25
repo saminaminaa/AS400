@@ -4,12 +4,12 @@
     function actionCodeClientDetailsCommande($twig,$db){
         if(isset($_POST['btRechercher'])){
             $form = array();
-            $detailcommande = new Detailcommande($db);
+            $orderdetail = new OrderDetail($db);
 
             $recherche = $_POST['recherche'];
             $form['recherche'] = $recherche;
         
-            $listeRecherche = $detailcommande->recherche($recherche); //Liste des types de produits
+            $listeRecherche = $orderdetail->recherche($recherche); //Liste des types de produits
                     
                 }
 

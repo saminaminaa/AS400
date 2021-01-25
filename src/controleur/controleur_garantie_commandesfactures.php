@@ -4,12 +4,12 @@
     function actionGarantieCommandesFactures($twig,$db){
         if(isset($_POST['btRechercherGarantie'])){
             $form = array();
-            $seriecommandes = new Seriecommandes($db);
+            $orderserial = new OrderSerial($db);
 
             $rechercheGarantie = $_POST['rechercheGarantie'];
             $form['rechercheGarantie'] = $rechercheGarantie;
         
-            $listeRechercheGarantie = $seriecommandes->rechercheGarantie($rechercheGarantie);
+            $listeRechercheGarantie = $orderserial->rechercheGarantie($rechercheGarantie);
                     
                 }
 

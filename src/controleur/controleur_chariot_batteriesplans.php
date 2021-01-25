@@ -4,7 +4,7 @@
     function actionChariotBatteriesPlans($twig,$db){
         if(isset($_POST['btRechercherChariot'])){
             $form = array();
-            $detailcommande = new Detailcommande($db);
+            $detailcommande = new OrderDetail($db);
 
             $rechercheChariot = $_POST['rechercheChariot'];
             $form['rechercheChariot'] = $rechercheChariot;

@@ -46,6 +46,7 @@
       <th scope="col">Date de la commande</th>
       <th scope="col">Numéro de la facture</th>
       <th> </th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
@@ -55,14 +56,15 @@
       <td>Column content</td>
       <td>Column content</td>
     </tr> #}
-    {% for d in listeRecherche %}
+    {% for od in listeRecherche %}
     <tr {# class="table-primary" #} >
-      <td>{{d.nom}}</td>
-      <td>{{d.codeclient}}</td>
-      <td>{{d.numCommande}}</td>
-      <td>{{d.date}}</td>
-      <td>{{d.idFacture}}</td>
-      <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&id={{ d.id }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
+      <td>{{od.nomClient}}</td>
+      <td>{{od.numClient}}</td>
+      <td>{{od.numCommande}}</td>
+      <td>{{od.dateCommande}}</td>
+      <td>{{od.numFacture}}</td>
+      <td type="hidden">{{od.id}}</td>
+      <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&id={{ od.id }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
       
     </tr>
     {% endfor %}

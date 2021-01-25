@@ -4,15 +4,14 @@
     function actionSerieDimensionsInfos($twig,$db){
         if(isset($_POST['btRechercherSer'])){
             $form = array();
-            $seriecommandes = new Seriecommandes($db);
+            $seriecommandes = new Orderserial($db);
 
             $rechercheSer = $_POST['rechercheSer'];
             $form['rechercheSer'] = $rechercheSer;
 
             $listeRechercheSer = $seriecommandes->rechercheSer($rechercheSer);
                     
-                }
-
+            }
         echo $twig->render('serie-dimensionsinfos.html.twig', array('form'=>$form, 'listeRechercheSer'=>$listeRechercheSer));
     }
 
