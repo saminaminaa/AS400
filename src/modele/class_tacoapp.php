@@ -19,14 +19,14 @@ class TacoApp{
         //requete permettant de trouver les commandes qui correspondent à un article en tapant le code de l'article (maintenant en tapant la designation)
         //$this->rechercheArticle = $db->prepare("select ta.id AS tacid, ta.appareil, tm.id, d.planCyclage, d.designation, d.id, c.id AS idCom, c.date, c.numClient, c.idFacture from tacoapp ta, tacomaster tm, detailcommande d, commande c where ta.id = tm.idApp and tm.id = d.planCyclage and d.idCommande = c.id and d.designation like :rechercheArticle order by d.designation");
         //requete avec la vraie BD :
-        $this->rechercheArticle = $db->prepare("select top 3 ta.[Numéro d'appareil] AS tacid, ta.Appareil AS appareil, tm.idTaco , od.PCyclage, od.[Désignation] AS desi, od.id, o.[Order Number] AS idCom, o.[Order date] AS date, o.[Customer number] AS numClient, o.[Invoice number] AS idFacture from tacoApp ta, tacomaster tm, OrderDetail od, [Order] o where ta.[Numéro d'appareil] = tm.NbrApp and tm.[Plan de cyclage] = od.PCyclage and od.OrderNb = o.[Order number] and od.[Désignation] like :rechercheArticle order by od.[Désignation]");
+        $this->rechercheArticle = $db->prepare("select ta.[Numéro d'appareil] AS tacid, ta.Appareil AS appareil, tm.idTaco , od.PCyclage, od.[Désignation] AS desi, od.id, o.[Order Number] AS idCom, o.[Order date] AS date, o.[Customer number] AS numClient, o.[Invoice number] AS idFacture from tacoApp ta, tacomaster tm, OrderDetail od, [Order] o where ta.[Numéro d'appareil] = tm.NbrApp and tm.[Plan de cyclage] = od.PCyclage and od.OrderNb = o.[Order number] and od.[Désignation] like :rechercheArticle order by od.[Désignation]");
 
 
 
         //requete pour selectionner les informations sur les batteries à partir de l'année 2000.
         //$this->select2000 = $db->prepare("select ta.id AS idTa, ta.constructeur, ta.famille, ta.appareil, tm.id, d.id, c.id, c.date, f.id, f.date AS dateFacture from tacoapp ta, tacomaster tm, detailcommande d, commande c, facture f where ta.id=tm.idApp and tm.planCyclage=d.planCyclage and d.idCommande=c.id and f.idCommande = c.id and f.date >= '2000-00-00' order by c.date");
         //meme requete avec la vraie BD :
-        $this->select2000 = $db->prepare("select top 3 ta.[Numéro d'appareil] AS idTa, ta.Constructeur, ta.Famille, ta.Appareil, i.[Invoice Date] AS dateFacture from tacoapp ta, tacomaster tm, OrderDetail od, [Order] o, Invoice i where ta.[Numéro d'appareil]=tm.NbrApp and tm.[Plan de cyclage]=od.PCyclage and od.OrderNb=o.[Order number] and i.OrderNumber = o.[Order number] and i.[Invoice Date] >= '20000000'");
+        $this->select2000 = $db->prepare("select ta.[Numéro d'appareil] AS idTa, ta.Constructeur, ta.Famille, ta.Appareil, i.[Invoice Date] AS dateFacture from tacoapp ta, tacomaster tm, OrderDetail od, [Order] o, Invoice i where ta.[Numéro d'appareil]=tm.NbrApp and tm.[Plan de cyclage]=od.PCyclage and od.OrderNb=o.[Order number] and i.OrderNumber = o.[Order number] and i.[Invoice Date] >= '20000000'");
 
 
         //requete permettant de trouver les plans de cyclages et de coffres correspondant à un numero de garantie
