@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+{% block style %}<link href="css/style-signin.css" rel="stylesheet"> {% endblock %}
+{% block title %} {{ parent() }} Dimensions {% endblock %}
+
+{% block contenu %}
+<div style="text-align:center">
+<h1> Dimensions</h1>
+
+</div>
+<br><br>
+
+<div class="panel panel-default">
+<div class="table-responsive">
+<div style="padding-left:33%; padding-right:33%">
+<table class="table table-hover">
+  <tbody>
+    <tr class="table-primary">
+      <th scope="row">Longueur 1 : </th>
+      <td>{{unTacomaster.l1}}</td>
+    </tr>
+    <tr class="table-secondary">
+      <th scope="row">Largeur 1 : </th>
+      <td>{{unTacomaster.lar1}}</td>
+    </tr>
+    <tr class="table-primary">
+      <th scope="row">Hauteur 1 : </th>
+      <td>{{unTacomaster.h1}}</td>
+    </tr>
+    <tr class="table-secondary">
+      <th scope="row">Longueur 2 :</th>
+      <td>{{unTacomaster.l2}}</td>
+    </tr>
+    <tr class="table-primary">
+      <th scope="row">Largeur 2 : </th>
+      <td>{{unTacomaster.lar2}}</td>
+    </tr>
+    <tr class="table-secondary">
+      <th scope="row">Hauteur 2 : </th>
+      <td>{{unTacomaster.h2}}</td>
+    </tr>
+ </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div style="text-align:center">
+<a type="button" class="btn btn-primary" href=javascript:history.go(-1)>Retour</a> <br><br>
+<a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+</div>
+
+{% endblock %}

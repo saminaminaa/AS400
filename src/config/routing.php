@@ -10,6 +10,7 @@
         $lesPages['infosbatteries2000'] = "actionInfosBatteries2000";
         $lesPages['garantie-plans'] = "actionGarantiePlans";
         $lesPages['garantie-commandesfactures'] = "actionGarantieCommandesFactures";
+        $lesPages['dimensions'] = "actionDimensions";
 
       if ($db == NULL) {
             echo( "nous ne trouvons pas de bd");

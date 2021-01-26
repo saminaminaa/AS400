@@ -40,6 +40,7 @@
       <th scope="col">Adresse 2</th>
       <th scope="col">Adresse 3</th>
       <th scope="col">Code postale</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -57,7 +58,9 @@
         <td>{{s.adresse2}}</td>
         <td>{{s.adresse3}}</td>
         <td>{{s.zip}}</td>
-        </tr>
+        <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&id={{ ta.tacid }}" value="Voir le plan de cyclage">Voir le plan de cyclage et de coffre</a>
+      </td>
+    </tr>
     {% endfor %}
   </tbody>
 </table>

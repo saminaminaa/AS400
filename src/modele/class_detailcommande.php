@@ -37,7 +37,6 @@ class OrderDetail{
         //Requete pour la vrai BD :
         $this->selectById = $db->prepare("select NbrArt, [Désignation] AS desi, Forklift, Manu, InvNbr AS idFacture, ShpNbr AS idLivraison, OrderNb AS idCommande, PCyclage AS planCyclage, PlanChantier planChantier from OrderDetail od where id=:id");
     
-
     }
     
     //selectionner
