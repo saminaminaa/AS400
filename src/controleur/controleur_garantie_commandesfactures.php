@@ -8,10 +8,20 @@
 
             $rechercheGarantie = $_POST['rechercheGarantie'];
             $form['rechercheGarantie'] = $rechercheGarantie;
-        
+            $_SESSION['rechercheGarantie'] = $rechercheGarantie;
             $listeRechercheGarantie = $orderserial->rechercheGarantie($rechercheGarantie);
                     
-                }
+        }else
+        if(isset($_SESSION['rechercheGarantie'])){
+            $form = array();
+            $orderserial = new OrderSerial($db);
+
+            $rechercheGarantie = $_SESSION['rechercheGarantie'];
+            $form['rechercheGarantie'] = $rechercheGarantie;
+            $_SESSION['rechercheGarantie'] = $rechercheGarantie;
+            $listeRechercheGarantie = $orderserial->rechercheGarantie($rechercheGarantie);
+                    
+        }
 
         echo $twig->render('garantie-commandesfactures.html.twig', array('form'=>$form, 'listeRechercheGarantie'=>$listeRechercheGarantie));
     }

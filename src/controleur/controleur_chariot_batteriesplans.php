@@ -14,10 +14,22 @@
                 return htmlspecialchars($valeur, ENT_QUOTES, 'UTF-8', false);
             }
             echo 'Vous avez recherché : ' .escape($rechercheChariot) .' !'; */
+            $_SESSION['rechercheChariot'] = $rechercheChariot;
 
             $listeRechercheChariot = $detailcommande->rechercheChariot($rechercheChariot); //Liste des types de produits
                     
-                }
+        }else
+        if(isset($_SESSION['rechercheChariot'])){
+            $form = array();
+            $detailcommande = new OrderDetail($db);
+
+            $rechercheChariot = $_SESSION['rechercheChariot'];
+            $form['rechercheChariot'] = $rechercheChariot;
+            $_SESSION['rechercheChariot'] = $rechercheChariot;
+
+            $listeRechercheChariot = $detailcommande->rechercheChariot($rechercheChariot); //Liste des types de produits
+                    
+        }
 
         echo $twig->render('chariot-batteriesplans.html.twig', array('form'=>$form, 'listeRechercheChariot'=>$listeRechercheChariot));
     }

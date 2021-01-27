@@ -1,5 +1,5 @@
 <?php 
-
+    session_start();
     require_once '../src/lib/vendor/autoload.php';
     require_once '../src/config/routing.php';
     //require_once '../src/config/parametres.php';
