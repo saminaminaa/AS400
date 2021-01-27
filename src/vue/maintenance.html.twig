@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+{% block title %} {{ parent() }}  En maintenance {% endblock %}
+
+{% block contenu %} 
+<!-- page de maintenance qui s'affichera si la BD est nulle -->
+    <h1>Le site est en maintenance, revenez dans quelques minutes</h1> 
+    <br><br>
+    <h1>(Aucune base de données détectée)</h1>
+
+{% endblock %}

@@ -12,12 +12,13 @@
         $lesPages['garantie-commandesfactures'] = "actionGarantieCommandesFactures";
         $lesPages['dimensions'] = "actionDimensions";
         $lesPages['infos'] = "actionInfos";
+        $lesPages['maintenance'] = "actionMaintenance";
 
-      if ($db == NULL) {
-            echo( "nous ne trouvons pas de bd");
-        } 
+          /*   if ($db == NULL) {
+            return "nous ne trouvons pas de bd";
+        } else { */
 
-/*         if ($db != NULL) {
+        if ($db != NULL) {
             if (isset($_GET['page'])) {
                 $page = $_GET['page'];
             } else {
@@ -27,13 +28,14 @@
             if (!isset($lesPages[$page])) {
                 $page = 'accueil';
             }
+            $contenu = $lesPages[$page];
         } else{
             $contenu = 'actionMaintenance';
         }
         return $contenu;
-    } */
+    }
 
-        if(isset($_GET['page'])){
+     /*    if(isset($_GET['page'])){
             $page = $_GET['page']; 
         } else{
             $page = 'accueil'; 
@@ -43,7 +45,8 @@
         }
         $contenu = $lesPages[$page];
         return $contenu; 
-    }
+    } */
 
-    // }
+
+
 ?>

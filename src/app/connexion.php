@@ -12,8 +12,8 @@ function connect() {
     } 
     catch (Exception $e) {
         $db = NULL;
-        echo("nous ne trouvons pas de bd");
-        echo "Erreur : " . $e->getMessage();
+        /* echo("nous ne trouvons pas de bd"); */
+        /* echo "Erreur : " . $e->getMessage(); */
     } 
     return $db;
 } 
