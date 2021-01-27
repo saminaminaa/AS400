@@ -25,17 +25,16 @@
 <br>
 <br><br><br>
 
-
+<div style="text-align:center">
 <div class="panel panel-default">   
 <div class="table-responsive">
 <table class="table table-hover">
   <thead>
     <tr class="table-primary">
       {# <th scope="col">id</th> #}
-      <th scope="col">Nombre d'articles</th>
-      <th scope="col">Designation</th>
       <th scope="col">Modèle du chariot</th>
-      <th scope="col">Numero de la batterie</th>
+      <th scope="col">Désignation</th>
+      <th scope="col">Numéro de la batterie</th>
       <th scope="col">Nom de la batterie</th>
       <th scope="col">Constructeur</th>
       <th scope="col">Famille</th>
@@ -52,9 +51,8 @@
     {% else %} #}
     <tr>
       {# <td>{{d.id}}</td> #}
-      <td>{{d.NbrArt}}</td>
-      <td>{{d.desi}}</td>
       <td>{{d.Forklift}}</td>
+      <td>{{d.desi}}</td>
       <td>{{d.idTa}}</td>
       <td>{{d.app}}</td>
       <td>{{d.constr}}</td>
@@ -67,6 +65,7 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
 </div>
 </div>
 <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
