@@ -4,13 +4,13 @@
 
 {% block contenu %}
 <div style="text-align:center">
-<h2> Vous avez choisi d'entrer le nom d'un article pour obtenir les commandes qui correspondent à cet article</h2>
+<h2>Liste des commandes d'un article</h2>
 <br>
 <br>
 </div>
  
 
-<h1 class="h3 mb-3 font-weight-normal">Vous avez recherché : "{{form.rechercheArticle}}"</h1>
+<h1 class="h3 mb-3 font-weight-normal">Voici le(s) resultat(s) correspondant(s) à l'article : "{{form.rechercheArticle}}"</h1>
 <br><br>
 {% if listeRechercheArticle == null %}
 <div style="text-align:center">
@@ -18,18 +18,24 @@
   <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
   </div>
 {% else %}
-<div style="text-align:center">
+{# <div style="text-align:center">
   <h2> Voici le(s) resultat(s) de votre recherche :  </h2>
 </div>
 <br>
-<br><br><br>
+<br><br><br> #}
+
+{# <div class="card text-white bg-info mb-3" style="max-width: 170rem;">
+  <div class="card-body"> #}
+    {# <h4 class="card-title">Info card title</h4> #}
 
 
+
+<div style="text-align:center">
 <div class="panel panel-default">   
 <div class="table-responsive">
 <table class="table table-hover">
   <thead>
-    <tr class="table-primary">
+    <tr class="table-info">
       <th scope="col">Nom de l'article</th>
       <th scope="col">Numéro de l'appareil</th>
       <th scope="col">Nom de l'appareil</th>
@@ -58,14 +64,17 @@
           / {{ta.année}}</td>
         <td>{{ta.numClient}}</td>
         <td>{{ta.idFacture}}</td>
-        <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&id={{ ta.tacid }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
+        <td><a type="button" class="btn btn-sm btn-info" href="index.php?page=detailscommande&id={{ ta.tacid }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
       </tr>
     {% endfor %}
   </tbody>
 </table>
 </div>
 </div>
-<a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+</div>
+{#  </div>
+</div> #}
+<a type="button" href="index.php?" class="btn btn-info"> <FONT color="white"> Retourner à l'accueil </FONT></a>
 {% endif %}
 
     

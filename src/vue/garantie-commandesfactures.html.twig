@@ -4,11 +4,11 @@
 
 {% block contenu %}
 <div style="text-align:center">
-<h2> Vous avez choisi d'entrer un numéro de série pour obtenir le visuel des commandes et factures</h2>
+<h2>Liste des commandes et des factures d'un numéro de série</h2>
 <br>
 <br>
 
-<h1 class="h3 mb-3 font-weight-normal">Vous avez recherché : "{{form.rechercheGarantie}}"</h1>
+<h1 class="h3 mb-3 font-weight-normal">Voici le(s) resultat(s) correspondant(s) au numéro de série : "{{form.rechercheGarantie}}"</h1>
 <br><br>
 {% if listeRechercheGarantie == null %}
 <div style="text-align:center">
@@ -17,18 +17,18 @@
   </div>
 {% else %}
 
-</div> <br>
+</div> <br>{# 
 <div style="text-align:center">
   <h2> Voici le(s) resultat(s) de votre recherche :  </h2>
 </div>
 <br>
-<br><br><br>
+<br><br><br> #}
 <div style="text-align:center">
 <div class="panel panel-default">   
 <div class="table-responsive">
 <table class="table table-hover">
   <thead>
-    <tr class="table-primary">
+    <tr class="table-success">
       <th scope="col">Numéro de série</th>
       <th scope="col">Numéro de la commande</th>
       <th scope="col">Date de la commande</th>
@@ -72,7 +72,7 @@
         <td>{{s.adresse2}}</td>
         <td>{{s.adresse3}}</td>
         <td>{{s.zip}}</td>
-        <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&id={{ s.numCommande }}" value="Voir le details de la commande">Voir le details de la commande</a>
+        <td><a type="button" class="btn btn-sm btn-success" href="index.php?page=detailscommande&id={{ s.numCommande }}" value="Voir le details de la commande">Voir le details de la commande</a>
       </td>
     </tr>
     {% endfor %}
@@ -82,7 +82,7 @@
 </div>
 </div>
 
-<a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+<a type="button" href="index.php?" class="btn btn-success"> <FONT color="white"> Retourner à l'accueil </FONT></a>
 {% endif %}
 
 {% endblock %}
