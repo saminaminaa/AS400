@@ -1,7 +1,27 @@
 {% extends "base.html.twig" %}
 {% block title %} {{ parent() }} Accueil {% endblock %}
 
-{% block contenu %} 
+{% block contenu %}
+
+  <style>
+      .loader {
+      position : fixed;
+      z-index: 9999;
+      background : url('https://velorail.trainguitres.fr/image/patientez.gif') 50% 50% no-repeat;
+      text: "Chargement en cours...";
+      top : 0px;
+      left : 0px;
+      height : 100%;
+      width : 100%;
+      cursor : wait;
+      }
+  </style>
+
+  <div style="text-align:center" class="loader" id="loader">
+     <br>
+    <h1>Chargement en cours veuillez patienter...</h1><br><br><br>
+    {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
+  </div>
 <h1 class="animate__animated animate__flipInX" >Bienvenue sur le site de l’{# <font face="Harlow solid italic"> #}AS400 {# <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
                             <path d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z"/>
                             <path d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334c-.43.32-.931.58-1.458.79C11.81 7.684 9.967 8 8 8c-1.967 0-3.81-.317-5.21-.876a6.508 6.508 0 0 1-1.457-.79z"/>
@@ -11,32 +31,13 @@
 <div style="text-align:center">
 <h2> Que voulez-vous faire ? </h2>
 </div>
-{# <a href="" class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.9'" onmouseout="this.style.opacity ='1'">
+
 <div style="padding-left:5%; padding-right:5%; padding-top:3%">
- <div class="card text-white bg-primary mb-3" style="max-width: 100rem;"> #}
-  {# <div class="card-header">Visuel d'une commande</div> #}
-  {# <div class="card-body">
-  <br>
-    <h4 class="card-title">- Obtenir le visuel en detail sur une commande  #}{# <a href="" ><FONT color="white" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-  <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-</svg> </FONT></a> #} {#  </h4> #} {# 
-    <p class="card-text"> </p> #}
-  {# </div>
-</div>
-</a> #}
-{# <br><br> #}
-<div style="padding-left:5%; padding-right:5%; padding-top:3%">
-<!--style pour que les liens ne soient pas soulignés -->
-<style type="text/css">
-    .open-button
-    {
-    text-decoration:none;
-    }
-    a:link
-    {
-    text-decoration:none;
-    }
-</style>
+{# <!--style pour que les liens ne soient pas soulignés -->
+  <style type="text/css">
+    .open-button{text-decoration:none;}
+    a:link{text-decoration:none;}
+  </style> #}
 <div class="card text-white bg-primary mb-3" style="max-width: 110rem;">
   <div class="card-body">
     <div style="text-align:center">
@@ -45,7 +46,7 @@
     <div style="margin-left: auto; margin-right: auto; width: ...;">
 
 <a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
-<div class="card text-white bg-secondary mb-3" style="max-width: 70rem; margin-left: auto; margin-right: auto; width: ...;">
+<div class="{# animate__animated animate__fadeInLeft #} card text-white bg-secondary mb-3" style="max-width: 70rem; margin-left: auto; margin-right: auto; width: ...;">
   <div class="card-body">
     <h4 class="card-title"> À partir du nom d'un client : </h4> <br>
     
@@ -72,16 +73,6 @@
   </div>
 </div>
 </a>
-{# <span class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
-<div class="card text-white bg-success mb-3" style="max-width: 100rem;">
-  <div class="card-body">
-    <h4 class="card-title">- Obtenir les informations sur les batteries à partir de l'année 2000</h4>
-    <div>
-    <a type="button" href="index.php?page=infosbatteries2000" onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0"> <FONT color="white"> Obtenir </FONT></a>
-    </div>
-  </div>
-</div>
-</span> #}
 <a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
 <div class="card text-white bg-success mb-3" style="max-width: 70rem; margin-left: auto; margin-right: auto; width: ...;">
   <div class="card-body">
@@ -129,53 +120,14 @@
 </div>
 </div>
 </div>
-{# <a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
-<div class="card text-white bg-info mb-3" style="max-width: 100rem;">
-  <div class="card-body">
-    <h4 class="card-title">- Entrer le numéro de série d'une batterie pour accéder aux plans de coffres et de cyclages</h4>
-    <form class="form-inline my-2 my-lg-0" action="index.php?page=garantie-plans" method="post">
-    <input class="form-control mr-sm-2" type="search" name="rechercheGarant" id="rechercheGarant" placeholder="Numéro de Série">
-    <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherGarant" id="btRechercherGarant" type="submit"> <FONT color="white"> Rechercher </FONT></button>
-</form>
-  </div>
-</div>
-</a> #}{# 
-<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
-<div class="card text-white bg-info mb-3" style="max-width: 100rem;">
-  <div class="card-body">
-    <h4 class="card-title">- Entrer un numéro de série pour obtenir le plan de cyclage et de coffre</h4>
-    <form class="form-inline my-2 my-lg-0" action="index.php?page=serie-plan" method="post">
-    <input class="form-control mr-sm-2" type="search" name="rechercheSerie" id="rechercheSerie" placeholder="Numéro de série">
-    <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherSerie" id="btRechercherSerie" type="submit"> <FONT color="white"> Rechercher </FONT></button>
-</form>
-  </div>
-</div>
-</a> #}
-{# <a href="" class="open-button" style="cursor: pointer; hover;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
-<div class="card text-white bg-primary mb-3" style="max-width: 100rem;">
-  {# <div class="card-header">Visuel d'une commande</div> #}
-{#   <div class="card-body">
-  <br>
-    <h4 class="card-title">- Entrer le modele d'un chariot pour trouver les batteries qui y sont installé avec les plans de coffre et de cyclage {# <a href="" ><FONT color="white" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-  <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-{# {# </svg> </FONT></a> #}  {# </h4> #} {# 
-    <p class="card-text"> </p> #}
-{#   </div>
-</div>
-</a> #}{# 
-<span class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
-<div class="card bg-light mb-3" style="max-width: 100rem;">
-  <div class="card-body">
-    <h4 class="card-title">- Entrer un numéro de série pour obtenir les dimensions et les informations sur les batteries</h4>
-    <form class="form-inline my-2 my-lg-0" action="index.php?page=serie-dimensionsinfos" method="post">
-      <input class="form-control mr-sm-2" type="search" name="rechercheSer" id="rechercheSer" placeholder="Numéro de série">
-      <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherSer" id="btRechercherSer" type="submit"> <FONT color="black"> Rechercher </FONT></button>
-    </form>
-  </div>
-</div>
-</div>
-</span> #}
 
 </div>
+
+ <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+    $(".loader").fadeOut("1000"); })
+
+  </script>
 
 {% endblock %}
