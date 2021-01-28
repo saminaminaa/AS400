@@ -48,7 +48,14 @@
         <td>{{ta.tacid}}</td>
         <td>{{ta.appareil}}</td>
         <td>{{ta.idCom}}</td>
-        <td>{{ta.date}}</td>
+        <td>{{ta.jour}} / 
+      
+          {% if ta.mois == null %}
+            0
+          {% else %}
+            {{ta.mois}}
+          {% endif %}
+          / {{ta.année}}</td>
         <td>{{ta.numClient}}</td>
         <td>{{ta.idFacture}}</td>
         <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&id={{ ta.tacid }}" value="Voir les details de la commande">Voir les details de la commande</a></td>

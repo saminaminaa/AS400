@@ -61,7 +61,14 @@
       <td>{{od.nomClient}}</td>
       <td>{{od.numClient}}</td>
       <td>{{od.numCommande}}</td>
-      <td>{{od.dateCommande}}</td>
+      <td>{{od.jour}} / 
+      
+      {% if od.mois == null %}
+        0
+      {% else %}
+        {{od.mois}}
+      {% endif %}
+       / {{od.année}}</td>
       <td>{{od.numFacture}}</td>
       {# <td type="hidden">{{od.id}}</td> #}
       <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&id={{ od.id }}" value="Voir les details de la commande">Voir les details de la commande</a></td>

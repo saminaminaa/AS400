@@ -23,7 +23,7 @@
 </div>
 <br>
 <br><br><br>
-
+<div style="text-align:center">
 <div class="panel panel-default">   
 <div class="table-responsive">
 <table class="table table-hover">
@@ -49,10 +49,24 @@
       <tr>
         <td>{{s.numSerie}}</td>
         <td>{{s.numCommande}}</td>
-        <td>{{s.dateCommande}}</td>
+        <td>{{s.jour}} / 
+          {% if s.mois == null %}
+            0
+          {% else %}
+            {{s.mois}}
+          {% endif %}
+            / {{s.année}}
+        </td>
         <td>{{s.numClient}}</td>
         <td>{{s.numFacture}}</td>
-        <td>{{s.dateFacture}}</td>
+        <td>{{s.jourFact}} / 
+          {% if s.moisFact == null %}
+            0
+          {% else %}
+            {{s.moisFact}}
+          {% endif %}
+            / {{s.annéeFact}}
+        </td>
         <td>{{s.nomClient}}</td>
         <td>{{s.adresse1}}</td>
         <td>{{s.adresse2}}</td>
@@ -64,6 +78,7 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
 </div>
 </div>
 
