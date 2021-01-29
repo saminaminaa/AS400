@@ -3,6 +3,7 @@
 {% block title %} {{ parent() }} Dimensions {% endblock %}
 
 {% block contenu %}
+<div class="animate__animated animate__fadeInUp">
 <div style="text-align:center">
 <h1> Dimensions</h1>
 
@@ -12,7 +13,7 @@
 <div class="panel panel-default">
 <div class="table-responsive">
 <div style="padding-left:33%; padding-right:33%">
-<table class="table table-hover">
+<table class="table table-hover ">
   <tbody>
       <tr class="table-primary">
       <th scope="row">Plan de cyclage : </th>
@@ -57,5 +58,5 @@
 <a type="button" class="btn btn-primary" href=javascript:history.go(-1)>Retour</a> <br><br>
 <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
 </div>
-
+</div>
 {% endblock %}

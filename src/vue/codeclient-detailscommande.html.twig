@@ -3,32 +3,8 @@
 {% block title %} {{ parent() }} Client {% endblock %}
 
 {% block contenu %}
-  <style>
-    .loader {
-    position : fixed;
-    z-index: 9999;
-    background : url('https://velorail.trainguitres.fr/image/patientez.gif') 50% 50% no-repeat;
-    text: "Chargement en cours...";
-    top : 0px;
-    left : 0px;
-    height : 100%;
-    width : 100%;
-    cursor : wait;
-    }
-  </style>
 
-  <div style="text-align:center" class="loader" id="loader">
-    <br>
-    <h1>Chargement en cours veuillez patienter...</h1><br><br><br>
-    {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
-  </div>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-  <script type="text/javascript">
-    $(window).load(function() {
-    $(".loader").fadeOut("1000"); })
-  </script>
-
-<div style="text-align:center">
+<div style="text-align:center" class="animate__animated animate__fadeInDown animate__delay-1s">
 <h2> Liste des commandes d'un client </h2>
 <br>
 <br>
@@ -60,7 +36,7 @@
 <br><br><br> #}
 
 <div style="text-align:center">
-<div class="panel panel-default">   
+<div class="panel panel-default animate__animated animate__fadeInLeft animate__delay-1s">   
 <div class="table-responsive">
 <table class="table table-hover">
   <thead>

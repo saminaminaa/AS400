@@ -4,15 +4,16 @@
 
 {% block contenu %}
 <div style="text-align:center">
+<div class="animate__animated animate__slideInUp">
 <h1> Détails de la commande </h1>
-
+</div>
 </div>
 <br><br>
 
-<div class="panel panel-default">
-<div class="table-responsive">
+<div class="panel panel-default ">
+<div class="table-responsive ">
 <div style="padding-left:33%; padding-right:33%">
-<table class="table table-hover">
+<table class="table table-hover animate__animated animate__zoomIn">
   <tbody>
     <tr class="table-dark">
       <th scope="row">Numéro de commande : </th>
@@ -57,17 +58,16 @@
     
  </tbody>
 </table>
-<div style="text-align:center">
+<div style="text-align:center" class="animate__animated animate__slideInDown">
 <a type="button" class="btn btn-sm btn-primary" href="index.php?page=dimensions&id={{unDetailcommande.planCyclage}}" value="Voir les dimensions">Voir les dimensions pour l'article : "{{unDetailcommande.desi}}"</a> <br> <br>
 <a type="button" class="btn btn-sm btn-primary" href="index.php?page=infos&id={{unDetailcommande.planCyclage}}" value="Voir les informations sur la batterie">Voir les informations sur l'appareil</a><br><br>
 <a type="button" class="btn btn-sm btn-primary" href="http://visualise/VIS_VISualise/searchMap.do" target="_blank">Voir le pdf sur le plan de coffre</a>
  </div><br>
 </div>
 </div>
-
 </div>
 
-<div style="text-align:center">
+<div style="text-align:center" class="animate__animated animate__slideInDown">
 <a type="button" class="btn btn-primary" href=javascript:history.go(-1)>Retour</a> <br><br>
 <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
 </div>
