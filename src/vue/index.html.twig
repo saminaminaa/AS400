@@ -8,7 +8,6 @@
       position : fixed;
       z-index: 9999;
       background : url('https://velorail.trainguitres.fr/image/patientez.gif') 50% 50% no-repeat;
-      text: "Chargement en cours...";
       top : 0px;
       left : 0px;
       height : 100%;
@@ -19,7 +18,7 @@
 
   <div style="text-align:center" class="loader" id="loader">
      <br>
-    <h1>Chargement en cours veuillez patienter...</h1><br><br><br>
+    {# <h1>Chargement en cours veuillez patienter...</h1><br><br><br> #}
     {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
   </div>
 <h1 class="animate__animated animate__flipInX" >Bienvenue sur le site de l’{# <font face="Harlow solid italic"> #}AS400 {# <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
@@ -49,11 +48,13 @@
 <div class="{# animate__animated animate__fadeInLeft #} card text-white bg-secondary mb-3" style="max-width: 70rem; margin-left: auto; margin-right: auto; width: ...;">
   <div class="card-body">
     <h4 class="card-title"> À partir du nom d'un client : </h4> <br>
-    
+
     <form class="form-inline my-2 my-lg-0" action="index.php?page=codeclient-detailscommande" method="post">
       <div style="margin-left: auto; margin-right: auto; width: ...;">
         <input class="form-control mr-sm-2" type="search" name="recherche" id="recherche" placeholder="Nom d'un client">
-        <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercher" id="btRechercher" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+         <span onclick="recherche()"> 
+        <button {# onclick="recherche()" #} onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercher" id="btRechercher" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+        </span> 
       </div>
     </form>
 
@@ -67,7 +68,9 @@
     <form class="form-inline my-2 my-lg-0" action="index.php?page=article-commandes" method="post">
     <div style="margin-left: auto; margin-right: auto; width: ...;">
       <input class="form-control mr-sm-2" type="search" name="rechercheArticle" id="rechercheArticle" placeholder="Nom de l'article">
-      <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherArticle" id="btRechercherArticle" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+      <span onclick="recherche()"> 
+        <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherArticle" id="btRechercherArticle" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+      </span>
     </div>
     </form>
   </div>
@@ -80,7 +83,9 @@
     <form class="form-inline my-2 my-lg-0" action="index.php?page=garantie-commandesfactures" method="post">
     <div style="margin-left: auto; margin-right: auto; width: ...;"> <br>
     <input class="form-control mr-sm-2" type="search" name="rechercheGarantie" id="rechercheGarantie" placeholder="Numéro de série">
-    <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherGarantie" id="btRechercherGarantie" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+    <span onclick="recherche()"> 
+      <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherGarantie" id="btRechercherGarantie" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+    </span> 
 </div>
 </form>
   </div>
@@ -109,7 +114,9 @@
     <form class="form-inline my-2 my-lg-0" action="index.php?page=chariot-batteriesplans" method="post">
       <div style="margin-left: auto; margin-right: auto; width: ...;"> <br>
       <input class="form-control mr-sm-2" type="search" name="rechercheChariot" id="rechercheChariot" placeholder="Modèle du chariot">
+      <span onclick="recherche()"> 
       <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherChariot" id="btRechercherChariot" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+      </span> 
       </div>
     </form>
   </div>
@@ -126,8 +133,12 @@
  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
   <script type="text/javascript">
     $(window).load(function() {
-    $(".loader").fadeOut("1000"); })
+    $(".loader").fadeOut("1000");})
 
+    function recherche(){
+      //alert("click");
+      $(".loader").fadeIn();
+    }
   </script>
 
 {% endblock %}

@@ -8,7 +8,7 @@
 <br>
 <br>
 
-<h1 class="h3 mb-3 font-weight-normal">Voici le(s) resultat(s) correspondant(s) au numéro de série : "{{form.rechercheGarantie}}"</h1>
+<h1 class="h3 mb-3 font-weight-normal">Voici le(s) résultat(s) correspondant(s) au numéro de série : "{{form.rechercheGarantie}}"</h1>
 <br><br>
 {% if listeRechercheGarantie == null %}
 <div style="text-align:center">
@@ -84,5 +84,35 @@
 
 <a type="button" href="index.php?" class="btn btn-success"> <FONT color="white"> Retourner à l'accueil </FONT></a>
 {% endif %}
+
+                                  <style>
+      .loader {
+      position : fixed;
+      z-index: 9999;
+      background : url('https://velorail.trainguitres.fr/image/patientez.gif') 50% 50% no-repeat;
+      top : 0px;
+      left : 0px;
+      height : 100%;
+      width : 100%;
+      cursor : wait;
+      }
+  </style>
+
+  <div style="text-align:center" class="loader" id="loader">
+     <br>
+    {# <h1>Chargement en cours veuillez patienter...</h1><br><br><br> #}
+    {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
+  </div>
+                                    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+                                    <script type="text/javascript">
+                                        $(window).load(function() {
+                                        $(".loader").fadeOut("1000");})
+
+                                        function recherche(){
+                                        //alert("click");
+                                        $(".loader").fadeIn();
+                                        }
+                                    </script>
+
 
 {% endblock %}
