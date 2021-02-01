@@ -1,4 +1,5 @@
 <?php 
+    session_cache_limiter('private_no_expire, must-revalidate');
     session_start();
     require_once '../src/lib/vendor/autoload.php';
     require_once '../src/config/routing.php';

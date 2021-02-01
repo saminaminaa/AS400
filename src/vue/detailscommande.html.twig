@@ -12,7 +12,7 @@
 
 <div class="panel panel-default ">
 <div class="table-responsive ">
-<div style="padding-left:33%; padding-right:33%">
+<div style="padding-left:30%; padding-right:30%">
 <table class="table table-hover animate__animated animate__zoomIn">
   <tbody>
     <tr class="table-dark">
@@ -58,18 +58,61 @@
     
  </tbody>
 </table>
-<div style="text-align:center" class="animate__animated animate__slideInDown">
+{# <div style="text-align:center" class="animate__animated animate__slideInDown">
 <a type="button" class="btn btn-sm btn-primary" href="index.php?page=dimensions&id={{unDetailcommande.planCyclage}}" value="Voir les dimensions">Voir les dimensions pour l'article : "{{unDetailcommande.desi}}"</a> <br> <br>
 <a type="button" class="btn btn-sm btn-primary" href="index.php?page=infos&id={{unDetailcommande.planCyclage}}" value="Voir les informations sur la batterie">Voir les informations sur l'appareil</a><br><br>
 <a type="button" class="btn btn-sm btn-primary" href="http://visualise/VIS_VISualise/searchMap.do" target="_blank">Voir le pdf sur le plan de coffre</a>
- </div><br>
+ </div><br> #}
 </div>
+</div>
+</div>
+<div class="animate__animated animate__slideInDown">
+  <div style="text-align:center" ><br>
+    <h4> Plus d'options : </h4>
+  </div>
+<div style="padding-left:30%">
+
+<a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href="index.php?page=dimensions&id={{unDetailcommande.planCyclage}}" value="Voir les dimensions"><span>Voir les dimensions pour l'article : "{{unDetailcommande.desi}}"</span></a> <br>
+<a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href="index.php?page=infos&id={{unDetailcommande.planCyclage}}" value="Voir les informations sur la batterie"><span>Voir les informations sur l'appareil</span></a><br>
+<a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href="http://visualise/VIS_VISualise/searchMap.do" target="_blank"><span>Voir le pdf sur le plan de coffre</span></a><br>
+<a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href=javascript:history.go(-1)><span>Retour</span></a><br>
+<a type="button" style="min-width:57%; max-width: 57%;" href="index.php?" class="ab btn btn-primary"><span> <FONT color="white"> Retourner à l'accueil </FONT> </span></a>
+<br><br>
+
 </div>
 </div>
 
-<div style="text-align:center" class="animate__animated animate__slideInDown">
-<a type="button" class="btn btn-primary" href=javascript:history.go(-1)>Retour</a> <br><br>
-<a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
-</div>
+
+<style>
+
+.ab{
+  position: relative;
+  transition: all .35s;
+}
+
+.ab span{
+  position: relative;
+  z-index: 2;
+}
+
+.ab:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #400586;
+  transition: all .35s;
+}
+
+.ab:hover{
+  color: #fff;
+}
+
+.ab:hover:after{
+  width: 100%;
+}
+</style>
 
 {% endblock %}
