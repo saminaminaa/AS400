@@ -18,7 +18,7 @@ class OrderDetail{
         //requete pour selectionner
         //$this->select = $db->prepare("select d.id, d.nbrArt, d.designation, d.forkilft, d.manu, d.idCommande from detailcommande d order by d.id");
         //Requete avc vraie BD :
-        $this->select = $db->prepare("select top 1 NbrArt, [Désignation] AS desi, Forklift, Manu, InvNbr AS idFacture, ShpNbr AS idLivraison, OrderNb AS idCommande, PCyclage AS planCyclage, PlanChantier planChantier from OrderDetail od");
+        $this->select = $db->prepare("select top 9000 NbrArt, [Désignation] AS desi, Forklift, Manu, InvNbr AS idFacture, ShpNbr AS idLivraison, OrderNb AS idCommande, PCyclage AS planCyclage, PlanChantier planChantier from OrderDetail od");
         
         //requete permettant de rechercher un code client pour obtenir les commandes pui le details d'une commande
         //$this->recherche = $db->prepare("select d.id, d.nbrArt, d.designation, d.forkilft, d.manu, d.idCommande, c.numClient AS codeclient, c.id AS numCommande, c.date, c.idFacture, f.id, f.nom from detailcommande d, commande c, facture f where d.idCommande = c.id and f.idCommande = c. id and f.nom like :recherche order by d.designation");
@@ -33,8 +33,9 @@ class OrderDetail{
 
         //$this->selectById = $db->prepare("select id, nbrArt, designation, forkilft, manu, idFacture, idLivraison, idCommande, planCyclage, planChantier from detailcommande d where id=:id");
         //Requete pour la vrai BD :
-        $this->selectById = $db->prepare("select NbrArt, [Désignation] AS desi, Forklift, Manu, InvNbr AS idFacture, ShpNbr AS idLivraison, OrderNb AS idCommande, PCyclage AS planCyclage, PlanChantier planChantier from OrderDetail od where id=:id");
+        $this->selectById = $db->prepare("select top 9000 NbrArt,SUBSTRING(NbrArt, 3, 5) AS pcof, id, [Désignation] AS desi, Forklift, Manu, InvNbr AS idFacture, ShpNbr AS idLivraison, OrderNb AS idCommande, PCyclage AS planCyclage, PlanChantier planChantier from OrderDetail od where InvNbr=:idFacture order by id");
 
+        $this->rechercheOD = $db ->prepare("select top 9000 NbrArt,SUBSTRING(NbrArt, 3, 5) AS pcof, [Désignation] AS desi, Forklift, Manu, InvNbr AS idFacture, ShpNbr AS idLivraison, OrderNb AS idCommande, PCyclage AS planCyclage, PlanChantier planChantier from OrderDetail od where InvNbr like :idFacture");
     }
     
     //selectionner
@@ -65,12 +66,21 @@ class OrderDetail{
     }
 
     //selectionner par l'id
-    public function selectById($id){
-        $this->selectById->execute(array(':id'=>$id));
+    public function selectById($idFacture){
+        $this->selectById->execute(array(':idFacture'=>$idFacture));
         if ($this->selectById->errorCode()!=0){
             print_r($this->selectById->errorInfo());
         }
-        return $this->selectById->fetch();
+        return $this->selectById->fetchAll();
+    }
+
+    //rechercher le detail d'une commande
+    public function rechercheOD($recherche){
+        $this->rechercheOD->execute(array('recherche'=>'%'.$recherche.'%'));
+        if ($this->rechercheOD->errorCode()!=0){
+            print_r($this->rechercheOD->errorInfo());
+        }
+        return $this->rechercheOD->fetchAll();
     }
 
 }

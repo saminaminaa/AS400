@@ -65,7 +65,7 @@
           / {{ta.année}}</td>
         <td>{{ta.numClient}}</td>
         <td>{{ta.idFacture}}</td>
-        <td><a type="button" class="btn btn-sm btn-info" href="index.php?page=detailscommande&id={{ ta.tacid }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
+        <td><a type="button" class="btn btn-sm btn-info" href="index.php?page=detailscommande&idFacture={{ ta.idFacture }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
       </tr>
     {% endfor %}
   </tbody>

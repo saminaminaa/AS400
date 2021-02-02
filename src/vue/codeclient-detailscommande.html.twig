@@ -14,7 +14,7 @@
 <div style="text-align:center">
   <h2> Aucun résultat n'a été trouvé pour cette recherche  </h2> <br> <br>
   <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
-  </div>
+</div>
 {% else %}
 {# <br>
 <br>
@@ -72,7 +72,7 @@
        / {{od.année}}</td>
       <td>{{od.numFacture}}</td>
       {# <td type="hidden">{{od.id}}</td> #}
-      <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&id={{ od.id }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
+      <td><a type="button" class="btn btn-sm btn-primary" href="index.php?page=detailscommande&idFacture={{ od.numFacture }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
       
     </tr>
     {% endfor %}
@@ -85,7 +85,7 @@
 <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
 
 {% endif %}
-                                  <style>
+  <style>
       .loader {
       position : fixed;
       z-index: 9999;

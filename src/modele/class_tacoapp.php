@@ -27,7 +27,7 @@ class TacoApp{
 
         //requete permettant de trouver les plans de cyclages et de coffres correspondant à un numero de garantie
         $this->rechercheGarant = $db->prepare("select ta.id AS tacid, ta.appareil, tm.id, tm.planCyclage, tm.planCoffre, tc.plancoffre, tc.longueur1, tc.largeur1, tc.hauteur1, tc.longueur2, tc.largeur2, tc.hauteur2 from tacoapp ta, tacomaster tm, tacocof tc where ta.id = tm.idApp and tm.planCoffre = tc.plancoffre and ta.id like :rechercheGarant order by ta.id");
-    
+
         //requete permettant d'obtenir le visuel des commandes et des facture en entrant un numéro de garantie
         $this->rechercheGarantie = $db->prepare("select d.id, c.id AS numCommande, c.date AS dateCommande , c.numClient, c.idFacture, f.id AS numFacture, f.date AS dateFacture, f.nom AS nomClient, f.adresse1, f.adresse2, f.adresse3, f.zip, f.idCommande, s.id AS numSerie from detailcommande d, commande c, facture f, seriecommandes s where d.idCommande = c.id and d.idFacture = f.id and f.idCommande = c.id and s.idFacture = f.id and s.idCommande = c.id and s.id like :rechercheGarantie order by s.id");
 

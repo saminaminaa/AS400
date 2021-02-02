@@ -2,12 +2,20 @@
 function actionDetailCommande($twig, $db){
     $form = array();
     $detailcommande = new OrderDetail($db);
-    $liste = $detailcommande->select();
-    $form['detailcommandes']=$liste;
+ /*    $liste = $detailcommande->select();
+    $form['detailcommandes']=$liste; */
 
-    if(isset($_GET['id'])){
+    if(isset($_GET['idFacture'])){
         $detailcommande = new OrderDetail($db);
-        $unDetailcommande = $detailcommande->selectById($_GET['id']);
+        $liste = $detailcommande->selectById($_GET['idFacture']);
+        //$form['detailcommande'] = $liste;
+        $unDetailcommande = $detailcommande->selectById($_GET['idFacture']);
+        if ($liste!=null){
+            $form['detailcommande'] = $liste;
+        }
+        else{
+            $form['message'] = 'Produit incorrect';
+        }
         if ($unDetailcommande!=null){
             $form['detailcommande'] = $unDetailcommande;
         }
@@ -15,9 +23,6 @@ function actionDetailCommande($twig, $db){
             $form['message'] = 'Produit incorrect';
         }
     }
-    else{
-                     
-    }
-    echo $twig->render('detailscommande.html.twig', array('form'=>$form,'liste'=>$liste, "unDetailcommande"=>$unDetailcommande));
+    echo $twig->render('detailscommande.html.twig', array('form'=>$form, 'liste'=>$liste, "unDetailcommande"=>$unDetailcommande));
     }
 ?>

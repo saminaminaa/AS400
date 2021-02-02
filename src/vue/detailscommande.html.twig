@@ -10,7 +10,74 @@
 </div>
 <br><br>
 
-<div class="panel panel-default ">
+<div style="text-align:center">
+<div class="panel panel-default animate__animated animate__fadeInLeft animate__delay-1s">   
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Numéro de ligne</th>
+      <th scope="col">Numéro de la commande</th>
+      <th scope="col">Numéro de l'article</th>
+      <th scope="col">Désignation</th>
+      <th scope="col">Modèle du chariot</th>
+      <th scope="col">Manu</th>
+      <th>Numéro de la facture</th>
+      <th>Numéro de la livraison</th>
+      <th>Plan de cyclage</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for od in liste %}
+    <tr>
+      <td>{{od.id}}</td>
+      <td>{{od.idCommande}}</td>
+      <td>{{od.NbrArt}}</td>
+      <td>{{od.desi}}</td>
+      <td>{{od.Forklift}}</td>
+      <td>{{od.Manu}}</td>
+      <td>{{od.idFacture}}</td>
+      <td>{{od.idLivraison}}</td>
+      <td>{{od.planCyclage}}</td>
+      <td> 
+ {#   <a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href="index.php?page=dimensions&id={{od.planCyclage}}" value="Voir les dimensions"><span>Voir les dimensions pour l'article : "{{od.desi}}"</span></a> <br>
+       #}
+        <form class="form-inline my-2 my-lg-0" action="index.php?page=dimensions" method="post">
+          <div style="margin-left: auto; margin-right: auto; width: ...;">
+            <input class="form-control" style="min-width:85%; max-width:85%;" type="search" name="rechercheDimension" id="rechercheDimension" placeholder="Plan de coffre" value="{{od.pcof}}" required/>
+            <button class="btn btn-primary" style="min-width:85%; max-width:85%;" name="btRechercherDimension" id="btRechercherDimension" type="submit"> <FONT color="white">Obtenir les dimensions</FONT></button>
+          </div> 
+        </form>
+      </td>
+      <td> 
+      <div>
+       <a type="button" style="min-width:57%;" class="btn btn-primary" href="index.php?page=infos&id={{od.planCyclage}}" value="Voir les informations sur la batterie"><span>Voir les informations sur l'appareil</span></a><br>
+      </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default ">{# 
 <div class="table-responsive ">
 <div style="padding-left:30%; padding-right:30%">
 <table class="table table-hover animate__animated animate__zoomIn">
@@ -20,7 +87,7 @@
       <td>{{unDetailcommande.idCommande}}</td>
     </tr>
     <tr>
-      <th scope="row">Nombre d'article : </th>
+      <th scope="row">Numéro d'article : </th>
       <td>{{unDetailcommande.NbrArt}}</td>
     </tr>
     <tr class="table-primary">
@@ -57,14 +124,14 @@
     </tr>
     
  </tbody>
-</table>
+</table> #}
 {# <div style="text-align:center" class="animate__animated animate__slideInDown">
 <a type="button" class="btn btn-sm btn-primary" href="index.php?page=dimensions&id={{unDetailcommande.planCyclage}}" value="Voir les dimensions">Voir les dimensions pour l'article : "{{unDetailcommande.desi}}"</a> <br> <br>
 <a type="button" class="btn btn-sm btn-primary" href="index.php?page=infos&id={{unDetailcommande.planCyclage}}" value="Voir les informations sur la batterie">Voir les informations sur l'appareil</a><br><br>
 <a type="button" class="btn btn-sm btn-primary" href="http://visualise/VIS_VISualise/searchMap.do" target="_blank">Voir le pdf sur le plan de coffre</a>
  </div><br> #}
-</div>
-</div>
+{# </div>
+</div> #}
 </div>
 <div class="animate__animated animate__slideInDown">
   <div style="text-align:center" ><br>
@@ -72,12 +139,10 @@
   </div>
 <div style="padding-left:30%">
 
-<a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href="index.php?page=dimensions&id={{unDetailcommande.planCyclage}}" value="Voir les dimensions"><span>Voir les dimensions pour l'article : "{{unDetailcommande.desi}}"</span></a> <br>
-<a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href="index.php?page=infos&id={{unDetailcommande.planCyclage}}" value="Voir les informations sur la batterie"><span>Voir les informations sur l'appareil</span></a><br>
-<a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href="http://visualise/VIS_VISualise/searchMap.do" target="_blank"><span>Voir le pdf sur le plan de coffre</span></a><br>
+<a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href="http://visualise/VIS_VISualise/searchMap.do" target="_blank"><span>Voir les PDF sur les plans de coffres et de cyclages</span></a><br>
 <a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href=javascript:history.go(-1)><span>Retour</span></a><br>
 <a type="button" style="min-width:57%; max-width: 57%;" href="index.php?" class="ab btn btn-primary"><span> <FONT color="white"> Retourner à l'accueil </FONT> </span></a>
-<br><br>
+<br><br>  
 
 </div>
 </div>
@@ -113,6 +178,6 @@
 .ab:hover:after{
   width: 100%;
 }
-</style>
+</style> 
 
 {% endblock %}

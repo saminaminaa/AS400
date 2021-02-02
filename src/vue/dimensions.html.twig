@@ -10,6 +10,84 @@
 </div>
 <br><br>
 
+
+<h1 class="h3 mb-3 font-weight-normal ">Voici le(s) résultat(s) correspondant(s) au plan de coffre numéro "{{form.rechercheDimension}}"</h1>
+<br><br>
+</div>
+{% if listeRechercheDimension == null %}
+<div style="text-align:center">
+  <h2> Aucun résultat n'a été trouvé pour cette recherche  </h2> <br> <br>
+  <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+  </div>
+{% else %}
+
+
+
+
+
+
+
+<div style="text-align:center">
+<div class="panel panel-default animate__animated animate__fadeInLeft animate__delay-1s">   
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Plan de cyclage</th>
+      <th scope="col">Plan de coffre</th>
+      <th scope="col">Longueur 1</th>
+      <th scope="col">Largeur 1</th>
+      <th scope="col">Hauteur 1</th>
+      <th scope="col">Longueur 2</th>
+      <th>Largeur 2</th>
+      <th>Hauteur 2</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tm in listeRechercheDimension %}
+    <tr>
+      <td>{{tm.pcycl}}</td>
+      <td>{{tm.pcoffre}}</td>
+      <td>{{tm.l1}}</td>
+      <td>{{tm.lar1}}</td>
+      <td>{{tm.h1}}</td>
+      <td>{{tm.l2}}</td>
+      <td>{{tm.lar2}}</td>
+      <td>{{tm.h2}}</td>
+     
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{# 
+
 <div class="panel panel-default">
 <div class="table-responsive">
 <div style="padding-left:33%; padding-right:33%">
@@ -52,7 +130,7 @@
 </div>
 </div>
 
-</div>
+</div> #}
 
 <div style="text-align:center">
 <a type="button" class="btn btn-primary" href=javascript:history.go(-1)>Retour</a> <br><br>

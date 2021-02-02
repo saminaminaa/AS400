@@ -9,6 +9,8 @@ class Tacomaster{
     private $select;
 
     private $selectById2;
+
+    private $rechercheDimension;
     
     public function __construct($db){
         
@@ -19,6 +21,10 @@ class Tacomaster{
         $this->select = $db->prepare("select tm.[Plan de cyclage] AS pcycl, tm.[Plan de coffre] pcoffre, tc.[Longueur 1] AS l1, tc.[Largeur 1] AS lar1, tc.[Hauteur 1] AS h1, tc.[Longueur 2] AS l2, tc.[Largeur 2] AS lar2, tc.[Hauteur 2] AS h2 from tacomaster tm, tacoCof tc where tm.[Plan de coffre]=tc.PlanCoffre");
     
         $this->selectById2 = $db->prepare("select tm.[Plan de cyclage] AS pcycl, ta.Constructeur, ta.Famille, ta.Appareil, ta.[Numéro d'appareil] AS numApp from tacomaster tm, tacoApp ta where tm.NbrApp=ta.[Numéro d'appareil] and tm.[Plan de cyclage]=:id");
+    
+
+
+        $this->rechercheDimension = $db->prepare("select tm.[Plan de cyclage] AS pcycl, tm.[Plan de coffre] AS pcoffre, tc.[Longueur 1] AS l1, tc.[Largeur 1] AS lar1, tc.[Hauteur 1] AS h1, tc.[Longueur 2] AS l2, tc.[Largeur 2] AS lar2, tc.[Hauteur 2] AS h2 from tacomaster tm, tacoCof tc where tm.[Plan de coffre]=tc.PlanCoffre and tc.PlanCoffre like :rechercheDimension");
     
     }
 
@@ -45,7 +51,15 @@ class Tacomaster{
             print_r($this->selectById2->errorInfo());
         }
         return $this->selectById2->fetch();
-    }   
+    }  
+    
+    public function rechercheDimension($rechercheDimension){
+        $this->rechercheDimension->execute(array('rechercheDimension'=>'%'.$rechercheDimension.'%'));
+        if ($this->rechercheDimension->errorCode()!=0){
+            print_r($this->rechercheDimension->errorInfo());
+        }
+        return $this->rechercheDimension->fetchAll();
+    }
     
 }
 
