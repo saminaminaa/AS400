@@ -3,82 +3,76 @@
 {% block title %} {{ parent() }} Article {% endblock %}
 
 {% block contenu %}
-<div style="text-align:center" class="animate__animated animate__fadeInDown animate__delay-1s">
-<h2>Liste des commandes d'un article</h2>
-<br>
-<br>
-
- 
-
-<h1 class="h3 mb-3 font-weight-normal ">Voici le(s) résultat(s) correspondant(s) à l'article : "{{form.rechercheArticle}}"</h1>
-<br><br>
-</div>
-{% if listeRechercheArticle == null %}
-<div style="text-align:center">
-  <h2> Aucun résultat n'a été trouvé pour cette recherche  </h2> <br> <br>
-  <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+  <div style="text-align:center" class="animate__animated animate__fadeInDown animate__delay-1s">
+    <h2>Liste des commandes d'un article</h2>
+    <br>
+    <br>
+    <h1 class="h3 mb-3 font-weight-normal ">Voici le(s) résultat(s) correspondant(s) à l'article : "{{form.rechercheArticle}}"</h1>
+    <br><br>
   </div>
-{% else %}
-{# <div style="text-align:center">
-  <h2> Voici le(s) resultat(s) de votre recherche :  </h2>
-</div>
-<br>
-<br><br><br> #}
+  {% if listeRechercheArticle == null %}
+    <div style="text-align:center">
+      <h2> Aucun résultat n'a été trouvé pour cette recherche  </h2> <br> <br>
+      <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+    </div>
+  {% else %}
+    {# <div style="text-align:center">
+      <h2> Voici le(s) resultat(s) de votre recherche :  </h2>
+    </div>
+    <br>
+    <br><br><br> #}
 
-{# <div class="card text-white bg-info mb-3" style="max-width: 170rem;">
-  <div class="card-body"> #}
-    {# <h4 class="card-title">Info card title</h4> #}
+    {# <div class="card text-white bg-info mb-3" style="max-width: 170rem;">
+      <div class="card-body"> #}
+        {# <h4 class="card-title">Info card title</h4> #}
+    <div style="text-align:center">
+      <div class="panel panel-default animate__animated animate__fadeInLeft animate__delay-1s">   
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr class="table-info">
+                <th scope="col">Nom de l'article</th>
+                <th scope="col">Numéro de l'appareil</th>
+                <th scope="col">Nom de l'appareil</th>
+                <th scope="col">Numéro de la commande </th>
+                <th scope="col">Date de la commande</th>
+                <th scope="col">Numéro du client</th>
+                <th scope="col">Numéro de la facture</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
 
-
-
-<div style="text-align:center">
-<div class="panel panel-default animate__animated animate__fadeInLeft animate__delay-1s">   
-<div class="table-responsive">
-<table class="table table-hover">
-  <thead>
-    <tr class="table-info">
-      <th scope="col">Nom de l'article</th>
-      <th scope="col">Numéro de l'appareil</th>
-      <th scope="col">Nom de l'appareil</th>
-      <th scope="col">Numéro de la commande </th>
-      <th scope="col">Date de la commande</th>
-      <th scope="col">Numéro du client</th>
-      <th scope="col">Numéro de la facture</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-
-    {% for ta in listeRechercheArticle %}
-      <tr>
-        <td>{{ta.desi}}</td>
-        <td>{{ta.tacid}}</td>
-        <td>{{ta.appareil}}</td>
-        <td>{{ta.idCom}}</td>
-        <td>{{ta.jour}} / 
-      
-          {% if ta.mois == null %}
-            0
-          {% else %}
-            {{ta.mois}}
-          {% endif %}
-          / {{ta.année}}</td>
-        <td>{{ta.numClient}}</td>
-        <td>{{ta.idFacture}}</td>
-        <td><a type="button" class="btn btn-sm btn-info" href="index.php?page=detailscommande&idFacture={{ ta.idFacture }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
-</div>
-</div>
-</div>
+              {% for ta in listeRechercheArticle %}
+                <tr>
+                  <td>{{ta.desi}}</td>
+                  <td>{{ta.tacid}}</td>
+                  <td>{{ta.appareil}}</td>
+                  <td>{{ta.idCom}}</td>
+                  <td>{{ta.jour}} / 
+                
+                    {% if ta.mois == null %}
+                      0
+                    {% else %}
+                      {{ta.mois}}
+                    {% endif %}
+                    / {{ta.année}}</td>
+                  <td>{{ta.numClient}}</td>
+                  <td>{{ta.idFacture}}</td>
+                  <td><a type="button" class="btn btn-sm btn-info" href="index.php?page=detailscommande&idFacture={{ ta.idFacture }}" value="Voir les details de la commande">Voir les details de la commande</a></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 {#  </div>
 </div> #}
-<a type="button" href="index.php?" class="btn btn-info"> <FONT color="white"> Retourner à l'accueil </FONT></a>
-{% endif %}
+    <a type="button" href="index.php?" class="btn btn-info"> <FONT color="white"> Retourner à l'accueil </FONT></a>
+  {% endif %}
 
-                                  <style>
+  <style>
       .loader {
       position : fixed;
       z-index: 9999;
@@ -92,19 +86,19 @@
   </style>
 
   <div style="text-align:center" class="loader" id="loader">
-     <br>
+    <br>
     {# <h1>Chargement en cours veuillez patienter...</h1><br><br><br> #}
     {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
   </div>
-                                    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-                                    <script type="text/javascript">
-                                        $(window).load(function() {
-                                        $(".loader").fadeOut("1000");})
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+    $(".loader").fadeOut("1000");})
 
-                                        function recherche(){
-                                        //alert("click");
-                                        $(".loader").fadeIn();
-                                        }
-                                    </script>
+    function recherche(){
+    //alert("click");
+      $(".loader").fadeIn();
+    }
+  </script>
 
 {% endblock %}
