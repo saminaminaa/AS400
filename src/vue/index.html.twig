@@ -96,6 +96,21 @@
   </div>
 </div>
 </a>
+<a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
+<div class="card text-white bg-warning mb-3" style="max-width: 95%; margin-left: auto; margin-right: auto; width: ...; border-radius:20px">
+  <div class="card-body">
+    <h4 class="card-title">À partir d'un numéro d'article : </h4>
+    <form class="form-inline my-2 my-lg-0" action="index.php?page=NbrArt-commande" method="post">
+    <div style="margin-left: auto; margin-right: auto; width: ...;"> <br>
+    <input class="form-control mr-sm-2" type="search" name="rechercheNbrArt" id="rechercheNbrArt" placeholder="Numéro de série">
+    <span onclick="recherche()"> 
+      <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercherNbrArt" id="btRechercherNbrArt" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+    </span> 
+</div>
+</form>
+  </div>
+</div>
+</a>
 </div>
 
 {# </div> #}
@@ -120,7 +135,7 @@
 
 
 <a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
-<div class="card text-white bg-warning mb-3" style="max-width: 95%; margin-left: auto; margin-right: auto; width: ...; border-radius:20px">
+<div class="card text-white bg-danger mb-3" style="max-width: 95%; margin-left: auto; margin-right: auto; width: ...; border-radius:20px">
   <div class="card-body">
     <h4 class="card-title"> À partir d'un modèle de chariot :</h4>
     <form class="form-inline my-2 my-lg-0" action="index.php?page=chariot-batteriesplans" method="post">

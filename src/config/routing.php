@@ -13,6 +13,7 @@
         $lesPages['dimensions'] = "actionDimensions";
         $lesPages['infos'] = "actionInfos";
         $lesPages['maintenance'] = "actionMaintenance";
+        $lesPages['NbrArt-commande'] = "actionNbrArtCommande";
 
           /*   if ($db == NULL) {
             return "nous ne trouvons pas de bd";
