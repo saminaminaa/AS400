@@ -27,32 +27,26 @@
               <tr class="table-danger">
                 {# <th scope="col">id</th> #}
                 <th scope="col">Modèle du chariot</th>
-                <th scope="col">Désignation</th>
-                <th scope="col">Numéro de l'appareil</th>
-                <th scope="col">Nom de l'appareil</th>
-                <th scope="col">Constructeur</th>
-                <th scope="col">Famille</th>
+                <th scope="col">Désignation de l'article</th>
+                <th scope="col">Numéro de l'article</th>
                 <th scope="col">Plan de cyclage</th>
                 <th scope="col">Plan de coffre 1 </th>
                 <th scope="col">Plan de coffre 2 </th>
               </tr>
             </thead>
             <tbody>
-              {% for d in listeRechercheChariot %}
+              {% for od in listeRechercheChariot %}
                 {# {% if d.recherchechariot != d.forkilft %}
                   <h1>Aucun résultat pour cette recherche</h1>
                 {% else %} #}
                 <tr>
                   {# <td>{{d.id}}</td> #}
-                  <td>{{d.Forklift}}</td>
-                  <td>{{d.desi}}</td>
-                  <td>{{d.idTa}}</td>
-                  <td>{{d.app}}</td>
-                  <td>{{d.constr}}</td>
-                  <td>{{d.fam}}</td>
-                  <td>{{d.plancycl}}</td>
-                  <td><u>Longueur</u> = {{d.l1}} <br><u>Largeur</u> = {{d.lar1}} <br><u>Hauteur</u> = {{d.h1}}</td>
-                  <td><u>Longueur</u> = {{d.l2}} <br><u>Largeur</u> = {{d.lar2}} <br><u>Hauteur</u> = {{d.h2}}</td>
+                  <td>{{od.Forklift}}</td>
+                  <td>{{od.desi}}</td>
+                  <td>{{od.NbrArt}}</td>
+                  <td>{{od.plancycl}}</td>
+                  <td><u>Longueur</u> = {{od.l1}} <br><u>Largeur</u> = {{od.lar1}} <br><u>Hauteur</u> = {{od.h1}}</td>
+                  <td><u>Longueur</u> = {{od.l2}} <br><u>Largeur</u> = {{od.lar2}} <br><u>Hauteur</u> = {{od.h2}}</td>
                 </tr>
                 {# {% endif %} #}
               {% endfor %}

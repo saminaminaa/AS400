@@ -14,6 +14,8 @@ class OrderDetail{
 
     private $rechercheNbrArt;
 
+    private $rechercheArticle;
+
     public function __construct($db){
 
         $this->db = $db ;
@@ -31,7 +33,8 @@ class OrderDetail{
         //requete permettant de trouver les batteries installées dans un chariot avec les plans de coffre et de cyclages en tapant le modele du chariot.
         //$this->rechercheChariot = $db->prepare("select d.id, d.nbrArt, d.designation, d.forkilft, d.manu, d.idCommande, tm.id AS idTm, tm.planCyclage AS plancycl, ta.id AS idTa, ta.constructeur AS constr, ta.famille AS fam, ta.appareil As app, tc.plancoffre AS pcof, tc.longueur1 AS l1, tc.largeur1 AS lar1, tc.hauteur1 AS h1, tc.longueur2 AS l2, tc.largeur2 AS lar2, tc.hauteur2 AS h2 from detailcommande d, tacomaster tm, tacoapp ta, tacocof tc where d.planCyclage = tm.id and tm.idApp = ta.id and tm.planCoffre = tc.plancoffre and d.forkilft like :rechercheChariot order by ta.appareil");
         //requete pour la vraie BD :
-        $this->rechercheChariot = $db->prepare("select top 9000 od.Id, od.[Désignation] AS desi, od.Forklift, od.Manu, od.OrderNb, tm.idTaco AS idTm, tm.[Plan de cyclage] AS plancycl, ta.[Numéro d'appareil] AS idTa, ta.Constructeur AS constr, ta.Famille AS fam, ta.Appareil As app, tc.PlanCoffre AS pcof, tc.[Longueur 1] AS l1, tc.[Largeur 1] AS lar1, tc.[Hauteur 1] AS h1, tc.[Longueur 2] AS l2, tc.[Largeur 2] AS lar2, tc.[Hauteur 2] AS h2 from OrderDetail od, Tacomaster tm, TacoApp ta, TacoCof tc where od.Pcyclage = tm.[Plan de cyclage] and tm.NbrApp = ta.[Numéro d'appareil] and tm.[Plan de coffre] = tc.PlanCoffre and od.forklift like :rechercheChariot order by ta.Appareil");
+        //$this->rechercheChariot = $db->prepare("select top 9000 od.Id, od.[Désignation] AS desi, od.Forklift, od.Manu, od.OrderNb, tm.idTaco AS idTm, tm.[Plan de cyclage] AS plancycl, ta.[Numéro d'appareil] AS idTa, ta.Constructeur AS constr, ta.Famille AS fam, ta.Appareil As app, tc.PlanCoffre AS pcof, tc.[Longueur 1] AS l1, tc.[Largeur 1] AS lar1, tc.[Hauteur 1] AS h1, tc.[Longueur 2] AS l2, tc.[Largeur 2] AS lar2, tc.[Hauteur 2] AS h2 from OrderDetail od, Tacomaster tm, TacoApp ta, TacoCof tc where od.Pcyclage = tm.[Plan de cyclage] and tm.NbrApp = ta.[Numéro d'appareil] and tm.[Plan de coffre] = tc.PlanCoffre and od.forklift like :rechercheChariot order by ta.Appareil");
+        $this->rechercheChariot = $db->prepare("select top 9000 od.Forklift, od.Désignation AS desi, od.NbrArt, tm.[Plan de cyclage] AS plancycl, tm.NbrApp, tc.[Longueur 1] AS l1, tc.[Largeur 1] AS lar1, tc.[Hauteur 1] AS h1, tc.[Longueur 2] AS l2, tc.[Largeur 2] AS lar2, tc.[Hauteur 2] from OrderDetail od, Tacomaster tm, TacoCof tc where od.[PCyclage]=tm.[Plan de cyclage] and tm.[Plan de coffre]=tc.PlanCoffre and od.Forklift like :rechercheChariot ");
 
         //$this->selectById = $db->prepare("select id, nbrArt, designation, forkilft, manu, idFacture, idLivraison, idCommande, planCyclage, planChantier from detailcommande d where id=:id");
         //Requete pour la vrai BD :
@@ -41,6 +44,8 @@ class OrderDetail{
     
         $this->rechercheNbrArt = $db->prepare("select top 9000 od.NbrArt, od.[Désignation], o.[Order number] AS numCommande, o.[Customer number] AS numClient, o.[Order date], LEFT(o.[Order date],4) AS année, RIGHT(o.[Order date],2) AS jour, SUBSTRING(o.[Order date], 5, 2) AS mois, o.[Invoice number] AS numFacture from OrderDetail od, [Order] o where od.InvNbr=o.[Invoice number] and od.NbrArt like :rechercheNbrArt");
     
+        $this->rechercheArticle = $db->prepare("select top 9000 od.NbrArt, od.[Désignation], o.[Order number] AS numCommande, o.[Customer number] AS numClient, o.[Order date], LEFT(o.[Order date],4) AS année, RIGHT(o.[Order date],2) AS jour, SUBSTRING(o.[Order date], 5, 2) AS mois, o.[Invoice number] AS numFacture from OrderDetail od, [Order] o where od.InvNbr=o.[Invoice number] and od.[Désignation] like :rechercheArticle");
+
     }
     
     //selectionner
@@ -95,6 +100,15 @@ class OrderDetail{
             print_r($this->rechercheNbrArt->errorInfo());
         }
         return $this->rechercheNbrArt->fetchAll();
+    }
+
+    //rechercher avec nom de l'article
+    public function rechercheArticle($rechercheArticle){
+        $this->rechercheArticle->execute(array('rechercheArticle'=>'%'.$rechercheArticle.'%'));
+        if ($this->rechercheArticle->errorCode()!=0){
+            print_r($this->rechercheArticle->errorInfo());
+        }
+        return $this->rechercheArticle->fetchAll();
     }
 
 }
