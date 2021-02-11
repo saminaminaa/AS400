@@ -82,32 +82,32 @@
       <a type="button" href="index.php?" class="btn btn-success animate__animated animate__fadeInDown animate__delay-1s"> <FONT color="white"> Retourner à l'accueil </FONT></a>
     {% endif %}
 
-    <style>
+<style>
       .loader {
-        position : fixed;
-        z-index: 9999;
-        background : url('https://velorail.trainguitres.fr/image/patientez.gif') 50% 50% no-repeat;
-        top : 0px;
-        left : 0px;
-        height : 100%;
-        width : 100%;
-        cursor : wait;
+      position : fixed;
+      z-index: 9999;
+      background : url('https://velorail.trainguitres.fr/image/patientez.gif') 50% 50% no-repeat;
+      top : 0px;
+      left : 0px;
+      height : 100%;
+      width : 100%;
+      cursor : wait;
       }
-    </style>
+  </style>
 
-    <div style="text-align:center" class="loader" id="loader">
-      <br>
-      {# <h1>Chargement en cours veuillez patienter...</h1><br><br><br> #}
-      {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
-    </div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript">
-      $(window).load(function() {
-      $(".loader").fadeOut("1000");})
+  <div style="text-align:center" class="loader" id="loader">
+    <br>
+    {# <h1>Chargement en cours veuillez patienter...</h1><br><br><br> #}
+    {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
+  </div>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+    $(".loader").fadeOut("1000");})
 
-      function recherche(){
-        //alert("click");
-        $(".loader").fadeIn();
-      }
-    </script>
+    function recherche(){
+    //alert("click");
+      $(".loader").fadeIn();
+    }
+  </script>
 {% endblock %}

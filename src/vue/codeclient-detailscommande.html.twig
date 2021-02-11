@@ -62,7 +62,6 @@
                   <td>{{od.numClient}}</td>
                   <td>{{od.numCommande}}</td>
                   <td>{{od.jour}} / 
-      
                   {% if od.mois == null %}
                     0
                   {% else %}
@@ -84,7 +83,7 @@
 
   {% endif %}
   <style>
-    .loader {
+      .loader {
       position : fixed;
       z-index: 9999;
       background : url('https://velorail.trainguitres.fr/image/patientez.gif') 50% 50% no-repeat;
@@ -93,11 +92,11 @@
       height : 100%;
       width : 100%;
       cursor : wait;
-    }
+      }
   </style>
 
   <div style="text-align:center" class="loader" id="loader">
-     <br>
+    <br>
     {# <h1>Chargement en cours veuillez patienter...</h1><br><br><br> #}
     {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
   </div>
@@ -107,7 +106,7 @@
     $(".loader").fadeOut("1000");})
 
     function recherche(){
-      //alert("click");
+    //alert("click");
       $(".loader").fadeIn();
     }
   </script>
