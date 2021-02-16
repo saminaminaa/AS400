@@ -43,8 +43,6 @@
                 <td>{{od.idLivraison}}</td>
                 <td>{{od.planCyclage}}</td>
                 <td> 
-          {#   <a type="button" style="min-width:57%; max-width: 57%;" class="ab btn btn-primary" href="index.php?page=dimensions&id={{od.planCyclage}}" value="Voir les dimensions"><span>Voir les dimensions pour l'article : "{{od.desi}}"</span></a> <br>
-                #}
                   <form class="form-inline my-2 my-lg-0" action="index.php?page=dimensions" method="post">
                       <input class="form-control" style="min-width:10%; max-width:85%;" type="search" name="rechercheDimension" id="rechercheDimension" placeholder="Plan de coffre" value="{{od.pcof}}" required/>
                       <button class="btn btn-primary" style="min-width:10%; max-width:85%;" name="btRechercherDimension" id="btRechercherDimension" type="submit"> <FONT color="white">Obtenir les dimensions</FONT></button>
@@ -62,61 +60,7 @@
         </div>
       </div>
     </div>
-<div class="panel panel-default ">{# 
-<div class="table-responsive ">
-<div style="padding-left:30%; padding-right:30%">
-<table class="table table-hover animate__animated animate__zoomIn">
-  <tbody>
-    <tr class="table-dark">
-      <th scope="row">Numéro de commande : </th>
-      <td>{{unDetailcommande.idCommande}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Numéro d'article : </th>
-      <td>{{unDetailcommande.NbrArt}}</td>
-    </tr>
-    <tr class="table-primary">
-      <th scope="row">Désignation : </th>
-      <td>{{unDetailcommande.desi}}</td>
-    </tr>
-    <tr class="table-secondary">
-      <th scope="row">Modèle de chariot :</th>
-      <td>{{unDetailcommande.Forklift}}</td>
-    </tr>
-    <tr class="table-success">
-      <th scope="row">Manufacture : </th>
-      <td>{{unDetailcommande.Manu}}</td>
-    </tr>
-    <tr class="table-danger">
-      <th scope="row">Numéro de facture : </th>
-      <td>{{unDetailcommande.idFacture}}</td>
-    </tr>
-    <tr class="table-warning">
-      <th scope="row">Numéro de livraison : </th>
-      <td>{{unDetailcommande.idLivraison}}</td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">Numéro de commande : </th>
-      <td>{{unDetailcommande.idCommande}}</td>
-    </tr>
-    <tr class="table-light">
-      <th scope="row">Plan de cyclage : </th>
-      <td>{{unDetailcommande.planCyclage}}</td>
-    </tr>
-    <tr class="table-dark">
-      <th scope="row">Plan de chantier : </th>
-      <td>{{unDetailcommande.PlanChantier}}</td>
-    </tr>
-    
- </tbody>
-</table> #}
-{# <div style="text-align:center" class="animate__animated animate__slideInDown">
-<a type="button" class="btn btn-sm btn-primary" href="index.php?page=dimensions&id={{unDetailcommande.planCyclage}}" value="Voir les dimensions">Voir les dimensions pour l'article : "{{unDetailcommande.desi}}"</a> <br> <br>
-<a type="button" class="btn btn-sm btn-primary" href="index.php?page=infos&id={{unDetailcommande.planCyclage}}" value="Voir les informations sur la batterie">Voir les informations sur l'appareil</a><br><br>
-<a type="button" class="btn btn-sm btn-primary" href="http://visualise/VIS_VISualise/searchMap.do" target="_blank">Voir le pdf sur le plan de coffre</a>
- </div><br> #}
-{# </div>
-</div> #}
+<div class="panel panel-default ">
 </div>
 <div class="animate__animated animate__slideInDown">
   <div style="text-align:center" ><br>

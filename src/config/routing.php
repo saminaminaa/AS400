@@ -1,4 +1,6 @@
 <?php 
+
+    //Fonction pour faire la route vers les pages
     function getPage($db){
         $lesPages['accueil'] = "actionAccueil";
         $lesPages['codeclient-detailscommande'] = "actionCodeClientDetailsCommande";
@@ -15,11 +17,7 @@
         $lesPages['maintenance'] = "actionMaintenance";
         $lesPages['NbrArt-commande'] = "actionNbrArtCommande";
 
-          /*   if ($db == NULL) {
-            return "nous ne trouvons pas de bd";
-        } else { */
-
-        if ($db != NULL) {
+        if ($db != NULL) { //Si la BD est nulle
             if (isset($_GET['page'])) {
                 $page = $_GET['page'];
             } else {
@@ -35,19 +33,5 @@
         }
         return $contenu;
     }
-
-     /*    if(isset($_GET['page'])){
-            $page = $_GET['page']; 
-        } else{
-            $page = 'accueil'; 
-        }
-        if (!isset($lesPages[$page])){
-            $page = 'accueil'; 
-        }
-        $contenu = $lesPages[$page];
-        return $contenu; 
-    } */
-
-
 
 ?>

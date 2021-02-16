@@ -40,10 +40,13 @@ class OrderDetail{
         //Requete pour la vrai BD :
         $this->selectById = $db->prepare("select top 9000 NbrArt,SUBSTRING(NbrArt, 3, 5) AS pcof, id, [Désignation] AS desi, Forklift, Manu, InvNbr AS idFacture, ShpNbr AS idLivraison, OrderNb AS idCommande, PCyclage AS planCyclage, PlanChantier planChantier from OrderDetail od where InvNbr=:idFacture order by id");
 
+        //rechercher sur la table orderDetail
         $this->rechercheOD = $db ->prepare("select top 9000 NbrArt,SUBSTRING(NbrArt, 3, 5) AS pcof, [Désignation] AS desi, Forklift, Manu, InvNbr AS idFacture, ShpNbr AS idLivraison, OrderNb AS idCommande, PCyclage AS planCyclage, PlanChantier planChantier from OrderDetail od where InvNbr like :idFacture");
     
+        //requete pour rechercher à partir d'un numéro d'article
         $this->rechercheNbrArt = $db->prepare("select top 9000 od.NbrArt, od.[Désignation], o.[Order number] AS numCommande, o.[Customer number] AS numClient, o.[Order date], LEFT(o.[Order date],4) AS année, RIGHT(o.[Order date],2) AS jour, SUBSTRING(o.[Order date], 5, 2) AS mois, o.[Invoice number] AS numFacture from OrderDetail od, [Order] o where od.InvNbr=o.[Invoice number] and od.NbrArt like :rechercheNbrArt");
     
+        //requete pour rechercher à partir d'un nom d'article
         $this->rechercheArticle = $db->prepare("select top 9000 od.NbrArt, od.[Désignation], o.[Order number] AS numCommande, o.[Customer number] AS numClient, o.[Order date], LEFT(o.[Order date],4) AS année, RIGHT(o.[Order date],2) AS jour, SUBSTRING(o.[Order date], 5, 2) AS mois, o.[Invoice number] AS numFacture from OrderDetail od, [Order] o where od.InvNbr=o.[Invoice number] and od.[Désignation] like :rechercheArticle");
 
     }

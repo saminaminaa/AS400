@@ -9,6 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title> {% block title %} AS400 - {% endblock %}</title>
+        <link href="//db.onlinewebfonts.com/c/208c60a0a6b9e5ebbc434f9f24c2aeae?family=Harlow+Solid+Italic" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <link href="https://bootswatch.com/4/pulse/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../_assets/css/custom.min.css">
@@ -19,75 +20,36 @@
         {% block body %}
         
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="text-align:center; margin-left: auto; margin-right: auto; width: ...;">
-{#             <a class="navbar-brand" href="index.php">AS400</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> #}
 
             <ul  class="navbar-nav mr-auto" >
                 <div style="text-align:center; margin-left: auto; margin-right: auto; width: ...;">
-                {# <li class="nav-item active"> #}
-                 <style>
+                 <style type="text/css">
+                    @import url(//db.onlinewebfonts.com/c/208c60a0a6b9e5ebbc434f9f24c2aeae?family=Harlow+Solid+Italic);
+
                     @font-face {
                         font-family: "Harlow solid italic";
                         src: url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.eot"); src: url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.woff") format("woff"), url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.svg#Harlow Solid Italic") format("svg");
                     }
-                </style> 
-                  <style type="text/css">
                         .open-button{text-decoration:none;}
                         a:link{text-decoration:none;}
                     </style>
-                    <a {# class="navbar-brand" #} href="index.php" style="text-align:center; margin-left: auto; margin-right: auto; width: ...; font-family: myFirstFont; src: url(sansation_light.woff); font-face: Harlow solid italic"><FONT color="white" size="6.5"  font-face="Harlow solid italic" font-family="Harlow solid italic" face="Harlow solid italic" >AS400
+                    <a href="index.php" style="text-align:center; margin-left: auto; margin-right: auto; width: ...; font-family: myFirstFont; src: url(sansation_light.woff); font-face: Harlow solid italic"><FONT color="white" size="6.5"  font-face="Harlow solid italic" font-family="Harlow solid italic" face="Harlow solid italic" >AS400
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
                             <path d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z"/>
                             <path d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334c-.43.32-.931.58-1.458.79C11.81 7.684 9.967 8 8 8c-1.967 0-3.81-.317-5.21-.876a6.508 6.508 0 0 1-1.457-.79z"/>
                             <path d="M14.667 11.668c-.43.319-.931.578-1.458.789-1.4.56-3.242.876-5.209.876-1.967 0-3.81-.316-5.21-.876a6.51 6.51 0 0 1-1.457-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667v-1.665z"/>
                         </svg></font>
                     </a>
-                {# </li> #}
                 </div>
-            </ul>
-            {# <ul class="navbar-nav mr-auto">    
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Accueil
-                    <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=apropos">À propos</a>
-                </li> #}
-               {#  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li> #}
-                {# </ul> #}
-                {# <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
-                </form> #}
-            
-            
+            </ul>           
         </nav>
-        
-                           {# <div class="row"> #}
-                             <div class="center-block col-md-10" style="float:none;">
-                             <div style="padding-left:15%; padding-top:3%;">
-                                 
-                                 {% block contenu %}
-                                 {# <div class="container" style="background-color:grey" >
-                                 </div> #}
+        <div class="center-block col-md-10" style="float:none;">
+            <div style="padding-left:15%; padding-top:3%;">
+                {% block contenu %}
 
-                                 {% endblock %}
-                             
-                             </div>
-                             </div>
-                             
+                {% endblock %}    
+            </div>
+        </div>
 
         {% endblock %}
         <script src="../_vendor/jquery/dist/jquery.min.js"></script>

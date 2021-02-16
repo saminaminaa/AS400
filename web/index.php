@@ -1,9 +1,9 @@
 <?php 
-    session_cache_limiter('private_no_expire, must-revalidate');
-    session_start();
+    session_cache_limiter('private_no_expire, must-revalidate'); //Pour que lorsqu'on fasse retour le navigateur se souvienne de la page precedente
+    session_start(); //Demarrer la session
+    //Appel de tous les fichiers requis
     require_once '../src/lib/vendor/autoload.php';
     require_once '../src/config/routing.php';
-    //require_once '../src/config/parametres.php';
     require_once '../src/controleur/controleur_index.php';
     require_once '../src/controleur/controleur_codeclient_detailscommande.php';
     require_once '../src/controleur/controleur_chariot_batteriesplans.php';
@@ -20,11 +20,11 @@
     require_once '../src/app/connexion.php';
     require_once '../src/modele/_class.php';
 
-    $loader = new Twig_Loader_Filesystem('../src/vue/');
+    $loader = new Twig_Loader_Filesystem('../src/vue/'); //librairies
     $twig = new Twig_Environment($loader, array());
 
-    $db = connect(); 
-    $contenu = getPage($db);
+    $db = connect(); //connection à la bd
+    $contenu = getPage($db); //pages
     // Exécution de la fonction souhaitée 
     $contenu($twig,$db);
 

@@ -14,18 +14,13 @@
       <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
     </div>
   {% else %}
-    {# <div style="text-align:center">
-    <h2> Voici le(s) resultat(s) de votre recherche :  </h2>
-    </div>
-    <br> #}
-    <br>{#<br><br> #}
+    <br>
     <div style="text-align:center">
       <div class="panel panel-default animate__animated animate__fadeInLeft animate__delay-1s">   
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
               <tr class="table-danger">
-                {# <th scope="col">id</th> #}
                 <th scope="col">Modèle du chariot</th>
                 <th scope="col">Désignation de l'article</th>
                 <th scope="col">Numéro de l'article</th>
@@ -36,11 +31,7 @@
             </thead>
             <tbody>
               {% for od in listeRechercheChariot %}
-                {# {% if d.recherchechariot != d.forkilft %}
-                  <h1>Aucun résultat pour cette recherche</h1>
-                {% else %} #}
                 <tr>
-                  {# <td>{{d.id}}</td> #}
                   <td>{{od.Forklift}}</td>
                   <td>{{od.desi}}</td>
                   <td>{{od.NbrArt}}</td>
@@ -48,7 +39,6 @@
                   <td><u>Longueur</u> = {{od.l1}} <br><u>Largeur</u> = {{od.lar1}} <br><u>Hauteur</u> = {{od.h1}}</td>
                   <td><u>Longueur</u> = {{od.l2}} <br><u>Largeur</u> = {{od.lar2}} <br><u>Hauteur</u> = {{od.h2}}</td>
                 </tr>
-                {# {% endif %} #}
               {% endfor %}
             </tbody>
           </table>
@@ -58,7 +48,6 @@
     <a type="button" href="index.php?" class="btn btn-warning"> <FONT color="white"> Retourner à l'accueil </FONT></a>
   {% endif %}
 
-{# {% endif %} #}
 <style>
       .loader {
       position : fixed;
@@ -74,8 +63,6 @@
 
   <div style="text-align:center" class="loader" id="loader">
     <br>
-    {# <h1>Chargement en cours veuillez patienter...</h1><br><br><br> #}
-    {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
   </div>
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
   <script type="text/javascript">

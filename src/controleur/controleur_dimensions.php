@@ -1,27 +1,10 @@
 <?php
+
+//fonction pour la page qui affiche les dimensions du coffre
 function actionDimensions($twig, $db){
-/*     $form = array();
-    $tacomaster = new Tacomaster($db);
-    $liste = $tacomaster->select();
-    $form['detailcommandes']=$liste;
-
-    if(isset($_GET['id'])){
-        $tacomaster = new Tacomaster($db);
-        $unTacomaster = $tacomaster->selectById($_GET['id']);
-        if ($unTacomaster!=null){
-            $form['tacomaster'] = $unTacomaster;
-        }
-        else{
-            $form['message'] = 'Numéro incorrect';
-        }
-    }
-    else{
-    } */
-
-
-    if(isset($_POST['btRechercherDimension'])){
+    if(isset($_POST['btRechercherDimension'])){ //click sur le bouton rechercher
         $form = array();
-        $tacomaster = new Tacomaster($db);
+        $tacomaster = new Tacomaster($db);//Table tacomaster
 
         $rechercheDimension = $_POST['rechercheDimension'];
         $form['rechercheDimension'] = $rechercheDimension;

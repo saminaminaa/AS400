@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 {% block style %}<link href="css/style-signin.css" rel="stylesheet"> {% endblock %}
 {% block title %} {{ parent() }} Article {% endblock %}
-
+<!--page dans laquelle nous pourrons voir les resultats suite à la recherche du nom d'un article-->
 {% block contenu %}
   <div style="text-align:center" class="animate__animated animate__fadeInDown animate__delay-1s">
     <h2>Liste des commandes d'un article</h2>
@@ -16,15 +16,6 @@
       <a type="button" href="index.php?" class="btn btn-primary"> <FONT color="white"> Retourner à l'accueil </FONT></a>
     </div>
   {% else %}
-    {# <div style="text-align:center">
-      <h2> Voici le(s) resultat(s) de votre recherche :  </h2>
-    </div>
-    <br>
-    <br><br><br> #}
-
-    {# <div class="card text-white bg-info mb-3" style="max-width: 170rem;">
-      <div class="card-body"> #}
-        {# <h4 class="card-title">Info card title</h4> #}
     <div style="text-align:center">
       <div class="panel panel-default animate__animated animate__fadeInLeft animate__delay-1s">   
         <div class="table-responsive">
@@ -42,14 +33,8 @@
                 </tr>
               </thead>
               <tbody>
-                {# <tr class="table-active">
-                  <th scope="row">Active</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr> #}
                 {% for od in listeRechercheArticle %}
-                <tr {# class="table-primary" #} >
+                <tr>
                   <td>{{od.Désignation}}</td>
                   <td>{{od.NbrArt}}</td>
                   <td>{{od.numClient}}</td>
@@ -71,8 +56,6 @@
         </div>
       </div>
     </div>
-{#  </div>
-</div> #}
     <a type="button" href="index.php?" class="btn btn-info"> <FONT color="white"> Retourner à l'accueil </FONT></a>
   {% endif %}
 
@@ -91,8 +74,6 @@
 
   <div style="text-align:center" class="loader" id="loader">
     <br>
-    {# <h1>Chargement en cours veuillez patienter...</h1><br><br><br> #}
-    {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
   </div>
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
   <script type="text/javascript">

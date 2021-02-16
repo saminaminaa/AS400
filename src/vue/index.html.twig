@@ -18,14 +18,9 @@
 
   <div style="text-align:center" class="loader" id="loader">
      <br>
-    {# <h1>Chargement en cours veuillez patienter...</h1><br><br><br> #}
-    {# <img src="https://velorail.trainguitres.fr/image/patientez.gif"></img> #}
   </div>
-<h1 class="animate__animated animate__flipInX" >Bienvenue sur le site de l’{# <font face="Harlow solid italic"> #}AS400 {# <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
-                            <path d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z"/>
-                            <path d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334c-.43.32-.931.58-1.458.79C11.81 7.684 9.967 8 8 8c-1.967 0-3.81-.317-5.21-.876a6.508 6.508 0 0 1-1.457-.79z"/>
-                            <path d="M14.667 11.668c-.43.319-.931.578-1.458.789-1.4.56-3.242.876-5.209.876-1.967 0-3.81-.316-5.21-.876a6.51 6.51 0 0 1-1.457-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667v-1.665z"/>
-                        </svg></font>  #}</h1>
+<h1 class="animate__animated animate__flipInX" >Bienvenue sur le site de l’AS400
+</h1>
 <br>
 <div style="text-align:center">
 <h2> Que voulez-vous faire ? </h2>
@@ -43,22 +38,15 @@
       <h3 class="card-title">Voir la liste des commandes passées puis le détail de ces commandes ainsi que les informations sur les batteries, les plans de coffres et de cyclages</h3>
     <br>
     <div style="margin-left: auto; margin-right: auto; width: ...;">
-{#                     <span style="cursor: pointer;" class="open-button" onclick="document.getElementById('test').style.display='block';" class="glyphicon glyphicon-chevron-down" ariahidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                  <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
-                </span>
-                <span style="cursor: pointer;" class="open-button" onclick="document.getElementById('test').style.display='none';" class="glyphicon glyphicon-chevron-up" ariahidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-                  <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/></svg>
-                </span>
-<div id="test" style="display:none"> #}
 <a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
-<div class="{# animate__animated animate__fadeInLeft #} card text-white bg-secondary mb-3" style="max-width: 95%; margin-left: auto; margin-right: auto; width: ...; border-radius:20px">
+<div class="card text-white bg-secondary mb-3" style="max-width: 95%; margin-left: auto; margin-right: auto; width: ...; border-radius:20px">
   <div class="card-body">
     <h4 class="card-title"> À partir du nom d'un client : </h4> <br>
     <form class="form-inline my-2 my-lg-0" action="index.php?page=codeclient-detailscommande" method="post">
       <div style="margin-left: auto; margin-right: auto; width: ...; border-radius:20px">
         <input class="form-control mr-sm-2" type="search" name="recherche" id="recherche" placeholder="Nom d'un client">
         <span onclick="recherche()"> 
-          <button {# onclick="recherche()" #} onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercher" id="btRechercher" type="submit"> <FONT color="white"> Rechercher </FONT></button>
+          <button onmouseover="this.style.opacity ='1'" onmouseout="this.style.opacity ='0.7'" style="border-width:1px; border-style:dotted; border-color:black;" class="btn btn-outline-primary my-2 my-sm-0" name="btRechercher" id="btRechercher" type="submit"> <FONT color="white"> Rechercher </FONT></button>
         </span> 
       </div>
     </form>
@@ -124,14 +112,6 @@
       <h3 class="card-title">Voir la liste des batteries installées dans un chariot ainsi que les plans de coffres et de cyclages</h3>
     <br>
     <div style="margin-left: auto; margin-right: auto; width: ...; border-radius:20px">
-{#                         <span style="cursor: pointer;" class="open-button" onclick="document.getElementById('test1').style.display='block';" class="glyphicon glyphicon-chevron-down" ariahidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                  <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
-                </span>
-                <span style="cursor: pointer;" class="open-button" onclick="document.getElementById('test1').style.display='none';" class="glyphicon glyphicon-chevron-up" ariahidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-                  <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/></svg>
-                </span>
-              <div id="test1" style="display:none"> #}
-
 
 <a class="open-button" style="cursor: pointer; hover; text-decoration:none;" onmouseover="this.style.opacity ='0.8'" onmouseout="this.style.opacity ='1'">
 <div class="card text-white bg-danger mb-3" style="max-width: 95%; margin-left: auto; margin-right: auto; width: ...; border-radius:20px">
@@ -153,7 +133,6 @@
 </div>
 </div>
 </div>
-{# </div> #}
 
 </div>
 
